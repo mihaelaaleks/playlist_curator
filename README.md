@@ -16,9 +16,7 @@ For troubleshooting visit the official Python docs on how to set up a [virtual e
 
 # Setting up Spotipy
 
-This project makes use of the Spotipy library. To set up making requests with the library the following environment variables will need to be included in the environments `activate` file.
-
-Open the `activate` file using any IDE or text editor and add the following lines under `export PATH`: 
+This project makes use of the Spotipy library. To set up making requests with the library the following environment variables will need to be included in a dedicated `.env` file.
 
 ```
 SPOTIPY_CLIENT_ID="ID"
@@ -31,4 +29,4 @@ export SPOTIPY_REDIRECT_URI
 ```
 
 Replace the ID and SECRET variables with the assigned from the Spotify API dashboard. 
-Ensure that the redirect URI is the same. 
+Ensure that the redirect URI is the same.

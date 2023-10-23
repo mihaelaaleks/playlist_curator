@@ -5,7 +5,7 @@ name: Python application
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "actions-workflow-setup" ]
   pull_request:
     branches: [ "main" ]
 

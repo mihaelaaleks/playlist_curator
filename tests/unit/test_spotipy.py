@@ -46,8 +46,7 @@ def test_does_recently_played_limit_return_correct_items(spotipy_user_read):
         # TODO: look up pytest assert ordering best practice
         # sometimes it's "actual" then "expected" 
         # others it's "expected" then "actual"
-        assert(actual_num_items == limit,
-               f"response failed to return expected number of items")
+        assert actual_num_items == limit
 
 def test_get_recently_played_above_100_raises_error(spotipy_user_read):
     big_limit = 101

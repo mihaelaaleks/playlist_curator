@@ -42,8 +42,8 @@ app.layout = dash.html.Div([
     dash.html.Div(children='Spotify Analysis Tool'),
     dash.html.Hr(),
     dash.dcc.RadioItems(options=['energy', 'valence', 'danceability'], value='energy', id='controls-and-radio-item'), 
-    dash.dash_table.DataTable(data = df.to_dict('records'), page_size=6),
-    dash.dcc.Graph(figure={}, id='controls-and-graph')
+    dash.dcc.Graph(figure={}, id='controls-and-graph'),
+    dash.dash_table.DataTable(data = df.to_dict('records'), page_size=6)
 ])
 
 # add controls to build the interaction

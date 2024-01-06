@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+// color palette
+$primary-color: #1E1E1E;
+$background-color: #000000;
+$primary-accent-1: #A770EF;
+$primary-accent-2: #EF7070;
+$primary-text-border: #D9D9D9;
+
+$border-radius: 10px;
+
+$default-padding: 15px;
+$panel-gap: 8px;
+$padding-top-bottom: 8px;
+$padding-right-left: 12px;
+
+
+// font
+$default-font: 'Inter', sans-serif;
+$plain-text-size: 2vh;
+$title-size: 6vh;
+$medium-text-size: 3vh;
+$card-size: 350px;
+
+body {
+    background-color: $background-color;
+    font-family: $default-font;
+    font-size: $plain-text-size;
+    text-align: left;
+    color: $primary-text-border;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: $panel-gap;
+
+    display: grid;
+    gap: $panel-gap;
+}
+
+
+nav {
+    background-color: $primary-color;
+    border-radius: $border-radius;
+    padding: $default-padding;
+    font-size: $medium-text-size;
+}
+
+button {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: $border-radius;
+    text-align: center;
+    text-decoration: none;
+    font-family: $default-font;
+    font-size: $plain-text-size;
+
+}
+
+.secondaryButton {
+    color: $primary-text-border;
+    background-color: $primary-color;
+    padding: $padding-right-left;
+}
+
+.container {
+    padding: $default-padding;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+}
+
+.playlistCard {
+    position: relative;
+    width: $card-size;
+    height: $card-size;
+    border-radius: $border-radius;
+    padding: $default-padding;
+}
+
+h1 {
+    font-family: $default-font;
+    font-size: $medium-text-size;
+    position: absolute;
+    bottom: 0;
+    color: $primary-text-border;
+}
+
+footer {
+    padding: $default-padding;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+}

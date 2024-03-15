@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="trackList">
+        {% if track_recommendations|length > 1  %}
+            {% for track in track_recommendations %}
+                <div class="trackCard">
+                    <img class="trackImage" src="{{track.image}}"/>
+                    <div class="titleCard">
+                        <h1>{{ track.name }}</h1>
+                        <div class="subtitle">{{ track.artist }}</div>
+                        <div class="subtitle">{{ track.popularity }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h1>Nothing to recommend for now!</h1>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

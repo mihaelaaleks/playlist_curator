@@ -12,6 +12,38 @@ body {
   gap: 8px;
 }
 
+form {
+  background-color: #1E1E1E;
+  font-family: "Inter", sans-serif;
+  font-size: 3vh;
+  text-align: left;
+  color: #D9D9D9;
+  box-sizing: border-box;
+}
+
+input {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 2vh;
+  font-weight: 700;
+  border-color: #D9D9D9;
+  background-color: #1E1E1E;
+  color: #D9D9D9;
+  padding: 12px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #A770EF;
+}
+
 nav {
   background-color: #1E1E1E;
   border-radius: 10px;
@@ -26,6 +58,43 @@ button {
   text-decoration: none;
   font-family: "Inter", sans-serif;
   font-size: 2vh;
+  font-weight: 700;
+  border-color: #D9D9D9;
+  background-color: #1E1E1E;
+  color: #D9D9D9;
+}
+
+.trackList {
+  padding: 15px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 8px;
+}
+
+.titleCard {
+  padding: 15px;
+}
+
+.subtitle {
+  font-weight: 400;
+  color: #A770EF;
+}
+
+.trackCard {
+  display: flex;
+  grid-auto-flow: column;
+  text-align: left;
+  background-color: #000000;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.trackImage {
+  border-radius: 10px;
+  margin-right: 12px;
+  width: 150px;
+  height: 150px;
+  padding: 12px;
 }
 
 .secondaryButton {
@@ -34,26 +103,62 @@ button {
   padding: 12px;
 }
 
+.primaryButtonAccent1 {
+  color: #1E1E1E;
+  background-color: #A770EF;
+  padding: 12px;
+  border: none;
+}
+
+.primaryButtonAccent2 {
+  color: #1E1E1E;
+  background-color: #EF7070;
+  padding: 12px;
+  border: none;
+}
+
 .container {
   padding: 15px;
   border-radius: 10px;
   background-color: #1E1E1E;
+  overflow-x: scroll;
+}
+
+.settingsContainer {
+  padding: 15px;
+  display: flex;
+  grid-auto-flow: column;
+  gap: 8px;
+}
+
+.contentShelf {
+  padding: 15px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 8px;
 }
 
 .playlistCard {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 200px;
+  height: 200px;
   border-radius: 10px;
   padding: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 h1 {
   font-family: "Inter", sans-serif;
   font-size: 3vh;
+  color: #D9D9D9;
+}
+
+#playlist_label {
+  font-size: 2vh;
   position: absolute;
   bottom: 0;
-  color: #D9D9D9;
 }
 
 footer {

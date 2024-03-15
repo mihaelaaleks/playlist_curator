@@ -16,10 +16,12 @@ $padding-right-left: 12px;
 
 // font
 $default-font: 'Inter', sans-serif;
+$font-weight: 400;
 $plain-text-size: 2vh;
 $title-size: 6vh;
 $medium-text-size: 3vh;
-$card-size: 350px;
+$card-size: 200px;
+$img-small: 150px;
 
 body {
     background-color: $background-color;
@@ -36,6 +38,39 @@ body {
     gap: $panel-gap;
 }
 
+form {
+    background-color: $primary-color;
+    font-family: $default-font;
+    font-size: $medium-text-size;
+    text-align: left;
+    color: $primary-text-border;
+    box-sizing: border-box;
+}
+
+input {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: $border-radius;
+    text-align: center;
+    text-decoration: none;
+    font-family: $default-font;
+    font-size: $plain-text-size;
+    font-weight: 700;
+    border-color: $primary-text-border;
+    background-color: $primary-color;
+    color: $primary-text-border;
+
+    padding: $padding-right-left;
+}
+
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: $background-color;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $primary-accent-1;
+}
 
 nav {
     background-color: $primary-color;
@@ -51,7 +86,43 @@ button {
     text-decoration: none;
     font-family: $default-font;
     font-size: $plain-text-size;
+    font-weight: 700;
+    border-color: $primary-text-border;
+    background-color: $primary-color;
+    color: $primary-text-border;
+}
 
+.trackList {
+    padding: $default-padding;
+    display: grid;
+    grid-auto-flow: row;
+    gap: $panel-gap;
+}
+
+.titleCard {
+    padding: $default-padding;
+}
+
+.subtitle {
+    font-weight: $font-weight;
+    color: $primary-accent-1;
+}
+
+.trackCard {
+    display: flex;
+    grid-auto-flow: column;
+    text-align: left;
+    background-color: $background-color;
+    padding: $panel-gap;
+    border-radius: $border-radius;
+}
+
+.trackImage {
+    border-radius: $border-radius;
+    margin-right: $padding-right-left;
+    width: $img-small;
+    height: $img-small;
+    padding: $padding-right-left;
 }
 
 .secondaryButton {
@@ -60,10 +131,40 @@ button {
     padding: $padding-right-left;
 }
 
+.primaryButtonAccent1 {
+    color: $primary-color;
+    background-color: $primary-accent-1;
+    padding: $padding-right-left;
+    border: none;
+}
+
+.primaryButtonAccent2 {
+    color: $primary-color;
+    background-color: $primary-accent-2;
+    padding: $padding-right-left;
+    border: none;
+}
+
 .container {
     padding: $default-padding;
     border-radius: $border-radius;
     background-color: $primary-color;
+    overflow-x: scroll;
+}
+
+.settingsContainer {
+    padding: $default-padding;
+    display: flex;
+    grid-auto-flow: column;
+    gap: $panel-gap;
+}
+
+
+.contentShelf {
+    padding: $default-padding;
+    display: grid;
+    grid-auto-flow: column;
+    gap: $panel-gap;
 }
 
 .playlistCard {
@@ -72,14 +173,22 @@ button {
     height: $card-size;
     border-radius: $border-radius;
     padding: $default-padding;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 h1 {
     font-family: $default-font;
     font-size: $medium-text-size;
+    color: $primary-text-border;
+}
+
+#playlist_label {
+    font-size: $plain-text-size;
     position: absolute;
     bottom: 0;
-    color: $primary-text-border;
 }
 
 footer {

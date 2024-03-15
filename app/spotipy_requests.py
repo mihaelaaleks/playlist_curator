@@ -26,7 +26,7 @@ def get_request_date():
     return
 
 def get_recently_played(limit:int, spotify: spotipy.Spotify):
-    """get_recently_played
+    """get top recently played tracks from users Spotify
 
     Args:
         limit (int): number of items to retrieve, must be less than 100
@@ -38,12 +38,6 @@ def get_recently_played(limit:int, spotify: spotipy.Spotify):
     if limit >= 100:
         raise ValueError("Limit must not exceed 100")    
     response = spotify.current_user_recently_played(limit = limit)
-    return response
-    data_store.store_data_as_json(response, 'recently_played_190923')
-    # clean_response = response_clean.clean_recently_played(response)
-    pprint.pprint(type(response))
-    pprint.pprint(len(response))
-    print(response)
     return response
 
 
@@ -63,9 +57,6 @@ def get_artist(artist_url, spotify):
     return response
 
 
-# response = spotify.current_user_top_artists(limit=5, offset=0, time_range='short_term')
-
-# pprint.pprint(response)
 
 # ideally ---> 
 # pull recently played tracks from spotify

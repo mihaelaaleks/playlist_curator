@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="miniNavbar">
+        <button>create playlist</button>
+        <button>from link</button>
+        <button>generate random</button>
+    </div>
+    
+    <div class="CuratorSettings">
+        <h1>Curator panel</h1>
+
+            <form method="POST">
+                <div class="Setting">
+                    {{ form.acousticness.label }}
+                    {{ form.acousticness }}
+                </div>
+                <div class="Setting">
+                    {{ form.danceability.label }}
+                    {{ form.danceability }}
+                </div>
+                <div class="Setting">
+                    {{ form.energy.label }}
+                    {{ form.energy }}
+                </div>
+                <div class="Setting">
+                    {{ form.instrumentalness.label }}
+                    {{ form.instrumentalness }}
+                </div>
+                
+                {{ form.submit }}
+            </form> 
+    </div>
+    <div class="CuratorSettings">
+        
+    </div>
+</div>

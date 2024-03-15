@@ -1,60 +1,50 @@
 import pandas as pd
 import dash
-import pathlib
-import plotly.express as px
+from pathlib import Path
+import dash_bootstrap_components as dbc
+from assets import style
+from templates import playlist_templates as pt
 
-data_path = pathlib.Path(__file__).parent.parent / pathlib.Path('data')
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CYBORG, style.FONT_AWESOME, 'assets/style.css'])
 
-df = pd.read_pickle(data_path / pathlib.Path('audio_analysis_df.pkl'))
+data_path = Path(__file__).parent.parent / Path('data')
 
+playlist_df = pd.read_pickle(data_path / Path('my_cleaned_playlist.pkl'))
 
-external_stylesheets = [
-    {
-        "href": (
-            "https://fonts.googleapis.com/css2?"
-            "family=Lato:wght@400;700&display=swap"
-        ),
-        "rel" : "stylesheet",
-    },
-]
+# create a dictionary from the playlist ids and names
+playlist_items = dict(zip(playlist_df.id, playlist_df.name))
+user_display_name = playlist_df['owner'][0]['display_name']
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+def playlist_names_navlinks():
+    list_of_buttons = []
+    for id, name in playlist_items.items(): 
+        list_of_buttons.append(dbc.NavLink(f"{name}", 
+                                           active="exact", 
+                                           id={
+                                               "type": "playlist_name_display",
+                                               "index": id},
+                                           href = f'/{id}',
+                                           external_link=True))
+    return list_of_buttons
+        
+content = dash.html.Div(id='page-content',children = [pt.header(), pt.main_body()],  style=style.CONTENT_STYLE)
 
-def header_layout():
-    dash.html.Div(
-            children=[
-                dash.html.P(children="🎵", className="header-emoji"),
-                dash.html.H1(
-                    children="In-depth Spotify Analytics", className="header-title"
-                ),
-                dash.html.P(
-                    children=(
-                        "Analyze your listening behaviour"
-                    ),
-                    className="header-description",
-                ),
-            ],
-            className="header",
-        )
+app.layout = dash.html.Div([dash.dcc.Location(id="url"), pt.sidebar(user_display_name, playlist_names_navlinks()), content])
 
-# app layout
-app.layout = dash.html.Div([
-    dash.html.Div(children='Spotify Analysis Tool'),
-    dash.html.Hr(),
-    dash.dcc.RadioItems(options=['energy', 'valence', 'danceability'], value='energy', id='controls-and-radio-item'), 
-    dash.dcc.Graph(figure={}, id='controls-and-graph'),
-    dash.dash_table.DataTable(data = df.to_dict('records'), page_size=6)
-])
-
-# add controls to build the interaction
-@dash.callback(
-    # need ids for this to work
-    dash.Output(component_id='controls-and-graph', component_property='figure'),
-    dash.Input(component_id='controls-and-radio-item', component_property='value')
+@app.callback(
+    # in this case no match would be needed 
+    # since the component would be generated from the callback
+    dash.Output('main-content', 'children'),
+    dash.Input("url", "pathname"),
+    # pass along the id of the navlink into the callback
+        # i need to figure how state works in dash, 
+        # the below throws errors 
+    # dash.State("session-store", "data")
 )
-def update_graph(col_chosen):
-    fig = px.histogram(df, x='artist_name', y=col_chosen, histfunc='avg')
-    return fig
+def show_playlist_info(pathname):
+    id_from_pathname = pathname.split('/')[-1]
+    playlist = playlist_items.get(id_from_pathname)
+    return playlist
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,9 +1,10 @@
 import pandas as pd
-import pathlib
+from pathlib import Path
+import json
 
-data_path = pathlib.Path(__file__).parent.parent / pathlib.Path('data')
+data_path = Path(__file__).parent.parent / Path('data')
 
-df = pd.read_pickle(data_path / pathlib.Path('audio_analysis_df.pkl'))
+df = pd.read_pickle(data_path / Path('audio_analysis_df.pkl'))
 
 def get_most_played_artists():
     most_played_artists = df['artist_name'].value_counts().to_frame()
@@ -12,4 +13,10 @@ def get_most_played_artists():
     return top_6
 
 
-get_most_played_artists()
+def get_playlist_data():
+    with open(data_path / Path('my_cleaned_playlists.json'), 'r') as fp:
+        playlist_data = json.load(fp)
+    # lame but currently the keys are converted to strings
+    return playlist_data
+
+

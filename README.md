@@ -1,5 +1,4 @@
-# Spotify Analyzer Tool
-
+# Curator Tool
 To get started set up a virtual python environment in the root folder of the project: 
 
 `python3 -m venv env`

@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 
+
 def set_output_path(filename: str) -> Path:
     data_filepath = Path(__file__).parent / Path("data") / Path(filename)
     return data_filepath

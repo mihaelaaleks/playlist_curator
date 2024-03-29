@@ -17,7 +17,7 @@ spotify = create_spotify()
 logger.info("Created spotipy instance")
 logger.info(data_filepath)
 
-# fetch playlists and save them 
+# fetch playlists and save them
 my_playlists = spotify.current_user_playlists()
 utils.save_playlist_json(my_playlists, data_filepath)
 

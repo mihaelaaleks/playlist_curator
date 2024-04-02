@@ -10,7 +10,7 @@ def init_app():
     app.config.from_object('config.Config')
     
     # Initialize Plugins
-    # session.init_app(app)
+    # e.g. session.init_app(app)
     
     with app.app_context():
         # import parts of the core Flask app

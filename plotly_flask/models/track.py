@@ -15,3 +15,23 @@ class Track:
         self.popularity = track_popularity
         self.artist = artist_name
         self.album_id = album_id
+        
+# from dataclasses import dataclass
+
+# @dataclass
+# class Track:
+#     id: str
+#     name: str
+#     image: str = None
+#     url: str = None
+#     popularity: int
+#     artist_id: str
+#     artist_name: str
+#     playlist_id: str
+
+    
+#     @classmethod
+#     def from_dict(cls, track:dict):
+#         return cls(track["track_id"],
+#                    track["track_name"]
+#                    )

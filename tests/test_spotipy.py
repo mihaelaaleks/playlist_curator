@@ -1,41 +1,45 @@
 import pytest
 from spotipy import Spotify
-from app.spotipy_requests import create_spotify, get_recently_played
+from app.spotipy_requests import (
+    create_spotify,
+    get_recently_played,
+    get_playlists_tracks,
+)
 
 
 @pytest.fixture
-def spotipy_user_read():
+def spotify():
     return create_spotify()
 
 
-def test_create_spotify_returns_spotify(spotipy_user_read):
-    assert isinstance(spotipy_user_read, Spotify)
+def test_create_spotify_returns_spotify(spotify):
+    assert isinstance(spotify, Spotify)
 
 
-def test_get_recently_played_has_proper_keys(spotipy_user_read):
-    response = get_recently_played(limit=10, spotify=spotipy_user_read)
+def test_get_recently_played_has_proper_keys(spotify):
+    response = get_recently_played(limit=10, spotify=spotify)
     assert isinstance(response, dict)
     needed_keys_from_response = ["items", "href"]
     for key in needed_keys_from_response:
         assert key in response.keys()
 
 
-def test_does_recently_played_limit_return_correct_items(spotipy_user_read):
+def test_does_recently_played_limit_return_correct_items(spotify):
     intereted_limits = [
         3,
         5,
         9,
     ]
     for limit in intereted_limits:
-        response = get_recently_played(limit=limit, spotify=spotipy_user_read)
+        response = get_recently_played(limit=limit, spotify=spotify)
         actual_num_items = len(response["items"])
         assert actual_num_items == limit
 
 
-def test_get_recently_played_above_100_raises_error(spotipy_user_read):
+def test_get_recently_played_above_100_raises_error(spotify):
     big_limit = 101
     with pytest.raises(ValueError):
-        get_recently_played(big_limit, spotipy_user_read)
+        get_recently_played(big_limit, spotify)
 
 
 ##########################################################################################
@@ -43,9 +47,9 @@ def test_get_recently_played_above_100_raises_error(spotipy_user_read):
 ##########################################################################################
 
 
-def test_items_json_nesting(spotipy_user_read):
+def test_items_json_nesting(spotify):
     big_limit = 1
-    response = get_recently_played(big_limit, spotipy_user_read)
+    response = get_recently_played(big_limit, spotify)
     item = response["items"][0]
     needed_top_keys = ["track", "played_at", "context"]
 
@@ -55,6 +59,16 @@ def test_items_json_nesting(spotipy_user_read):
     track = item["track"]
     needed_track_keys = ["album", "artists", "name", "id"]
     missing_keys = set(needed_track_keys) - set(track.keys())
+
+
+def test_get_playlist_tracks(spotify):
+    id_list = [
+        "7ryAqRhEED5CNarJgIXxgd",
+        "0e8tuDsddlctM6tBDEYPJ2",
+        "7doP9xG2n6DXnflGTmURsC",
+    ]
+    playlist_id_map = get_playlists_tracks(id_list, spotify)
+    assert len(id_list) == len(playlist_id_map)
 
 
 # The other type of test

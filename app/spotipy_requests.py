@@ -4,10 +4,6 @@ import pandas as pd
 
 from dotenv import load_dotenv
 
-# need authentication scope
-# need to find the way to set the scope flexibly
-# would be baller
-
 
 # For the scopes, if they're a known constant elements, do an enum
 def create_spotify(scope: str = "user-library-read user-top-read") -> spotipy.Spotify:
@@ -15,15 +11,18 @@ def create_spotify(scope: str = "user-library-read user-top-read") -> spotipy.Sp
     return spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
 
-# scope = 'user-library-read user-top-read'
-# # scope = "user-read-recently-played"
-# # initial authorisation code
-# spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(scope = scope))
-
-
 # TO DO
 def get_request_date():
     return
+
+
+def get_playlists_tracks(playlist_ids: list, spotify: spotipy.Spotify):
+    id_map = {}
+    for id in playlist_ids:
+        res = spotify.playlist_tracks(id)
+        id_map[id] = res
+
+    return id_map
 
 
 def get_recently_played(limit: int, spotify: spotipy.Spotify):

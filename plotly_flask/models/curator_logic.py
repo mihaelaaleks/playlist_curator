@@ -2,10 +2,10 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import pandas as pd
 from pathlib import Path
-import json
+
 
 from plotly_flask.models.track import Track
-
+from app.utils import get_tag
 
 def create_spotify(scope :str ='user-library-read user-top-read') -> spotipy.Spotify:
     return spotipy.Spotify(auth_manager=SpotifyOAuth(scope = scope)) 
@@ -68,12 +68,6 @@ def clean_track_recommendations(track_data):
         dfs.append(df)
     recommended_tracks_df = pd.concat(dfs)
     return recommended_tracks_df
-
-def get_tag(from_image_row, tag):
-    if len(from_image_row) == 0:
-        return None
-    first_entry = from_image_row[0]
-    return first_entry[tag]
 
 def df_to_track_obj(tracklist_df):
     track_rec_list = []

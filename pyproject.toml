@@ -1,8 +1,8 @@
 [project]
-name = "your-project-name"
-version = "0.1.0"
+name = "spotify_playist_curator"
+version = "0.0.1"
 description = ""
-requires-python = "==3.11.7"
+requires-python = ">=3.11, <3.12"
 
 dependencies = [
   "python-dotenv == 1.0.0",

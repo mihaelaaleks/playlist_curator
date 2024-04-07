@@ -1,0 +1,25 @@
+[project]
+name = "your-project-name"
+version = "0.1.0"
+description = ""
+requires-python = "==3.11.7"
+
+dependencies = [
+  "python-dotenv == 1.0.0",
+  "spotipy == 2.23.0",
+  "flask == 2.2.5",
+  "pandas == 2.1.0",
+  "dash==2.13.0"
+]
+[project.optional-dependencies]
+dev = [
+    "ipykernel == 6.25.2",
+    "pytest == 7.4.2"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["app", "data", "notebooks", "plotly_flask"]

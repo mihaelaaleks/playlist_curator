@@ -41,4 +41,3 @@ final_pkl_filepath = utils.set_output_path("my_presentable_playlists.pkl")
 playlist_df.to_pickle(final_pkl_filepath)
 
 # get tracks from playlist
-

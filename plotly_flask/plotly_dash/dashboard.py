@@ -22,8 +22,10 @@ def create_dashboard(server):
     # create dash layout
     dash_app.layout = html.Div(
         [
-            dcc.Location(id='url', refresh=True),
-            dcc.Graph(id='pie-chart',),
+            dcc.Location(id="url", refresh=True),
+            dcc.Graph(
+                id="pie-chart",
+            ),
         ]
     )
 
@@ -32,28 +34,31 @@ def create_dashboard(server):
 
 
 def init_callbacks(dash_app):
-    @dash_app.callback(
-        Output('pie-chart', 'figure'),
-        [Input('url', 'pathname')]
-    )
+    @dash_app.callback(Output("pie-chart", "figure"), [Input("url", "pathname")])
     def update_pie_chart(pathname):
         # When pathname is like:
         #   "/dashapp/0e8tuDsddlctM6tBDEYPJ2/"
-        # running 
-        #   "/dashapp/0e8tuDsddlctM6tBDEYPJ2/".split("/") 
+        # running
+        #   "/dashapp/0e8tuDsddlctM6tBDEYPJ2/".split("/")
         #   => ['', 'dashapp', '0e8tuDsddlctM6tBDEYPJ2', '']
         # The -2 is two spaces back from the end to get the id
         PATH_SPLIT_INDEX = -2
-        
-        print(f"Pathname:{pathname}")
-        playlist_id = pathname.split('/')[PATH_SPLIT_INDEX]
-        print(f"playlist id:{playlist_id}")    
-        
-        df = playlist_logic.get_tracklist_w_labels(playlist_id)
-        artist_counts = df['artist_name'].value_counts()
 
-                # Create pie chart
-        fig = px.pie(names=artist_counts.index, values=artist_counts.values, title='Artist Counts')
-        fig.update_traces(textposition='inside', textinfo='percent+label', hoverinfo='label+percent')
+        print(f"Pathname:{pathname}")
+        playlist_id = pathname.split("/")[PATH_SPLIT_INDEX]
+        print(f"playlist id:{playlist_id}")
+
+        df = playlist_logic.get_tracklist_w_labels(playlist_id)
+        artist_counts = df["artist_name"].value_counts()
+
+        # Create pie chart
+        fig = px.pie(
+            names=artist_counts.index,
+            values=artist_counts.values,
+            title="Artist Counts",
+        )
+        fig.update_traces(
+            textposition="inside", textinfo="percent+label", hoverinfo="label+percent"
+        )
 
         return fig

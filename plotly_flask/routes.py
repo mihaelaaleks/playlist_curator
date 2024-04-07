@@ -40,9 +40,9 @@ def show_playlist(playlist_id):
     return render_template(
         "dashboard.html",
         tracklist=tracklist,
-        playlist_id = playlist_id,
+        playlist_id=playlist_id,
         playlists=playlist_list,
-        avg = avg_popularity,
+        avg=avg_popularity,
     )
 
 

@@ -3,6 +3,3 @@ class Playlist:
         self.name = name
         self.id = playlist_id
         self.image = image
-        
-        
-    

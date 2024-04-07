@@ -1,6 +1,5 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-import pandas as pd
 
 from dotenv import load_dotenv
 

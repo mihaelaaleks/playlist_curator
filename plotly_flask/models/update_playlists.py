@@ -1,7 +1,5 @@
 from app.spotipy_requests import create_spotify
 from app import utils
-import json
-from pathlib import Path
 import pandas as pd
 import logging
 

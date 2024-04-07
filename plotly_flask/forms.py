@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import SubmitField, IntegerRangeField, FieldList, SelectMultipleField
+from wtforms import SubmitField, IntegerRangeField, SelectMultipleField
 from wtforms.validators import DataRequired
 
 from plotly_flask.models import genre_logic

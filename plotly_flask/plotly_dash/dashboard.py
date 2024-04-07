@@ -8,7 +8,7 @@ PLAYLIST_ID = "7doP9xG2n6DXnflGTmURsC"
 def create_dashboard(server):
     dash_app = Dash(
         server=server,
-        routes_pathname_prefix=f"/dashapp/",
+        routes_pathname_prefix="/dashapp/",
         external_stylesheets=[
             "../static/basic_ui.css",
         ],

@@ -1,7 +1,6 @@
 [project]
 name = "spotify_playist_curator"
 version = "0.0.1"
-description = ""
 requires-python = ">=3.11, <3.12"
 
 dependencies = [

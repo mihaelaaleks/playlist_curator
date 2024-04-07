@@ -7,9 +7,9 @@ Activate the environment:
 
 `source env/bin/activate`
 
-Install the required packages to run the project from the provided `requirements.txt` file: 
+Install the required packages to run the project from the provided `pyproject.toml` file: 
 
-`python3 -m pip install -r requirements.txt`
+`python3 -m pip install -e .[dev]`
 
 For troubleshooting visit the official Python docs on how to set up a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
 

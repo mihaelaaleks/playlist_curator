@@ -1,31 +1,55 @@
-# Curator Tool
-To get started set up a virtual python environment in the root folder of the project: 
 
-`python3 -m venv env`
+### Playlist curator
 
-Activate the environment: 
+#### Description: TBD
 
-`source env/bin/activate`
+Other things to include:
 
-Install the required packages to run the project from the provided `requirements.txt` file: 
+    Technology stack: Indicate the technological nature of the software, including primary programming language(s) and whether the software is intended as standalone or as a module in a framework or other ecosystem.
+    Status: Alpha, Beta, 1.1, etc. It's OK to write a sentence, too. The goal is to let interested people know where this project is at. This is also a good place to link to the CHANGELOG.
+    Links to production or demo instances
+    Describe what sets this apart from related-projects. Linking to another doc or page is OK if this can't be expressed in a sentence or two.
 
-`python3 -m pip install -r requirements.txt`
+Screenshot: If the software has visual components, place a screenshot after the description; e.g.,
 
-For troubleshooting visit the official Python docs on how to set up a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
+#### Dependencies
 
-# Setting up Spotipy
+Describe any dependencies that must be installed for this software to work. This includes programming languages, databases or other storage mechanisms, build tools, frameworks, and so forth. If specific versions of other software are required, or known not to work, call that out.
+#### Installation
 
-This project makes use of the Spotipy library. To set up making requests with the library the following environment variables will need to be included in a dedicated `.env` file.
+Detailed instructions on how to install, configure, and get the project running. This should be frequently tested to ensure reliability. Alternatively, link to a separate INSTALL document.
+#### Configuration
 
-```
-SPOTIPY_CLIENT_ID="ID"
-SPOTIPY_CLIENT_SECRET="SECRET"
-SPOTIPY_REDIRECT_URI="http://localhost:8888/callback"
+If the software is configurable, describe it in detail, either here or in other documentation to which you link.
+#### Usage
 
-export SPOTIPY_CLIENT_ID
-export SPOTIPY_CLIENT_SECRET
-export SPOTIPY_REDIRECT_URI
-```
+Show users how to use the software. Be specific. Use appropriate formatting when showing code snippets.
+#### How to test the software
 
-Replace the ID and SECRET variables with the assigned from the Spotify API dashboard. 
-Ensure that the redirect URI is the same.
+If the software includes automated tests, detail how to run those tests.
+#### Known issues
+
+Document any known significant shortcomings with the software.
+#### Getting help
+
+Instruct users how to get help with this software; this might include links to an issue tracker, wiki, mailing list, etc.
+
+Example
+
+If you have questions, concerns, bug reports, etc, please file an issue in this repository's Issue Tracker.
+#### Getting involved
+
+This section should detail why people should get involved and describe key areas you are currently focusing on; e.g., trying to get feedback on features, fixing certain bugs, building important pieces, etc.
+
+General instructions on how to contribute should be stated with a link to CONTRIBUTING.
+#### Open source licensing info
+
+    TERMS
+    LICENSE
+    CFPB Source Code Policy
+
+#### Credits and references
+
+    Projects that inspired you
+    Related projects
+    Books, papers, talks, or other sources that have meaningful impact or influence on this project

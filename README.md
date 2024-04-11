@@ -1,7 +1,7 @@
 
-### Playlist curator
+## Playlist curator
 
-#### Description: TBD
+### Description: TBD
 
 Other things to include:
 
@@ -12,43 +12,43 @@ Other things to include:
 
 Screenshot: If the software has visual components, place a screenshot after the description; e.g.,
 
-#### Dependencies
+### Dependencies
 
 Describe any dependencies that must be installed for this software to work. This includes programming languages, databases or other storage mechanisms, build tools, frameworks, and so forth. If specific versions of other software are required, or known not to work, call that out.
-#### Installation
+### Installation
 
 Detailed instructions on how to install, configure, and get the project running. This should be frequently tested to ensure reliability. Alternatively, link to a separate INSTALL document.
-#### Configuration
+### Configuration
 
 If the software is configurable, describe it in detail, either here or in other documentation to which you link.
-#### Usage
+### Usage
 
 Show users how to use the software. Be specific. Use appropriate formatting when showing code snippets.
-#### How to test the software
+### How to test the software
 
 If the software includes automated tests, detail how to run those tests.
-#### Known issues
+### Known issues
 
 Document any known significant shortcomings with the software.
-#### Getting help
+### Getting help
 
 Instruct users how to get help with this software; this might include links to an issue tracker, wiki, mailing list, etc.
 
 Example
 
 If you have questions, concerns, bug reports, etc, please file an issue in this repository's Issue Tracker.
-#### Getting involved
+### Getting involved
 
 This section should detail why people should get involved and describe key areas you are currently focusing on; e.g., trying to get feedback on features, fixing certain bugs, building important pieces, etc.
 
 General instructions on how to contribute should be stated with a link to CONTRIBUTING.
-#### Open source licensing info
+### Open source licensing info
 
     TERMS
     LICENSE
     CFPB Source Code Policy
 
-#### Credits and references
+### Credits and references
 
     Projects that inspired you
     Related projects

@@ -56,8 +56,8 @@ def curator():
 
         spotify = curator_logic.create_spotify()
         track_recommendations = curator_logic.get_cleaned_recommendations(
-            limit=50,
             spotify=spotify,
+            limit=50,
             t_acousticness=form.acousticness.data,
             t_danceability=form.danceability.data,
             t_energy=form.energy.data,

@@ -2,15 +2,14 @@
 body {
   background-color: #000000;
   font-family: "Inter", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   text-align: left;
   color: #D9D9D9;
   box-sizing: border-box;
   margin: 0;
   padding: 8px;
   display: grid;
-  gap: 8px;
-}
+  gap: 8px; }
 
 form {
   background-color: #1E1E1E;
@@ -18,8 +17,7 @@ form {
   font-size: 30px;
   text-align: left;
   color: #D9D9D9;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 input {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -27,41 +25,40 @@ input {
   text-align: center;
   text-decoration: none;
   font-family: "Inter", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 400;
   border-color: #D9D9D9;
   background-color: #1E1E1E;
   color: #D9D9D9;
-  padding: 12px;
-}
+  padding: 8px; }
 
 ::-webkit-scrollbar {
   width: 15px;
-  background-color: #000000;
-}
+  background-color: #000000; }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #A770EF;
-}
+  background-color: #A770EF; }
 
 nav {
   background-color: #1E1E1E;
   border-radius: 10px;
   padding: 15px;
-  font-size: 30px;
-}
+  font-size: 30px; }
 
 h1 {
   font-family: "Inter", sans-serif;
   font-size: 30px;
-  color: #D9D9D9;
-}
+  color: #D9D9D9; }
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: #D9D9D9; }
 
 footer {
   padding: 15px;
   border-radius: 10px;
-  background-color: #1E1E1E;
-}
+  background-color: #1E1E1E; }
 
 button {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -69,28 +66,25 @@ button {
   text-align: center;
   text-decoration: none;
   font-family: "Inter", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 16px;
   border-color: #D9D9D9;
   background-color: #1E1E1E;
   color: #D9D9D9;
-}
+  padding: 8px; }
 
 .trackList {
   padding: 15px;
   display: grid;
   grid-auto-flow: row;
-  gap: 8px;
-}
+  gap: 8px; }
 
 .titleCard {
-  padding: 15px;
-}
+  padding: 15px; }
 
 .subtitle {
   font-weight: 400;
-  color: #A770EF;
-}
+  color: #A770EF; }
 
 .trackCard {
   display: flex;
@@ -98,50 +92,94 @@ button {
   text-align: left;
   background-color: #000000;
   padding: 8px;
-  border-radius: 10px;
-}
+  border-radius: 10px; }
 
 .trackImage {
   border-radius: 10px;
   margin-right: 12px;
   width: 150px;
   height: 150px;
-  padding: 12px;
-}
+  padding: 12px; }
 
 .secondaryButton {
   color: #D9D9D9;
   background-color: #1E1E1E;
-  padding: 12px;
-}
+  padding: 8px;
+  background: #1E1E1E; }
+  .secondaryButton:hover {
+    background: #0a0a0a;
+    transition: all 0.3s ease; }
+  .secondaryButton:active {
+    background: black; }
+  .secondaryButton:focus {
+    background: black; }
 
 .primaryButtonAccent1 {
   color: #1E1E1E;
   background-color: #A770EF;
   padding: 12px;
   border: none;
-}
+  font-weight: 700;
+  background: #A770EF; }
+  .primaryButtonAccent1:hover {
+    background: #904beb;
+    transition: all 0.3s ease; }
+  .primaryButtonAccent1:active {
+    background: #6416c9; }
+  .primaryButtonAccent1:focus {
+    background: #6416c9; }
 
 .primaryButtonAccent2 {
   color: #1E1E1E;
   background-color: #EF7070;
   padding: 12px;
   border: none;
-}
+  font-weight: 700;
+  background: #EF7070; }
+  .primaryButtonAccent2:hover {
+    background: #eb4b4b;
+    transition: all 0.3s ease; }
+  .primaryButtonAccent2:active {
+    background: #c91616; }
+  .primaryButtonAccent2:focus {
+    background: #c91616; }
 
 .container {
   padding: 15px;
   border-radius: 10px;
   background-color: #1E1E1E;
   overflow-x: scroll;
-}
+  overflow: hidden; }
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; }
+
+.dashboardContainer {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #1E1E1E;
+  overflow-x: scroll;
+  overflow: hidden; }
 
 .settingsContainer {
   padding: 15px;
   display: flex;
   grid-auto-flow: column;
-  gap: 8px;
-}
+  gap: 8px; }
+
+.Setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+label {
+  font-weight: 400;
+  font-size: 16px;
+  display: block;
+  float: left;
+  width: 170px; }
 
 .statCard {
   padding: 15px;
@@ -149,19 +187,19 @@ button {
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
-}
+  width: fit-content; }
 
 .statContainer {
   padding: 15px;
   border-radius: 10px;
-}
+  background-color: #1E1E1E; }
 
 .contentShelf {
   padding: 15px;
   display: grid;
   grid-auto-flow: column;
   gap: 8px;
-}
+  overflow-x: scroll; }
 
 .playlistCard {
   position: relative;
@@ -171,13 +209,11 @@ button {
   padding: 15px;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
 
 #playlist_label {
-  font-size: 20px;
+  font-size: 16px;
   position: absolute;
-  bottom: 0;
-}
+  bottom: 0; }
 
 /*# sourceMappingURL=basic_ui.css.map */

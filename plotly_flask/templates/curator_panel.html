@@ -1,35 +1,35 @@
 <div class="container">
+    <h1>Curate playlist: </h1>
     <div class="miniNavbar">
-        <button>create playlist</button>
-        <button>from link</button>
-        <button>generate random</button>
+        <button class="secondaryButton">from scratch</button>
+        <button class="secondaryButton">from own playlist</button>
+        <button class="secondaryButton">from link</button>
+        <button class="secondaryButton">random</button>
     </div>
-    
-    <div class="CuratorSettings">
-        <h1>Curator panel</h1>
-
+    <div class="container">
+        <h2>Playlist settings: </h2>
+    <div class="settingsContainer">
             <form method="POST">
                 <div class="Setting">
-                    {{ form.acousticness.label }}
+                    <label>{{ form.acousticness.label }}</label>
                     {{ form.acousticness }}
                 </div>
                 <div class="Setting">
-                    {{ form.danceability.label }}
+                    <label>{{ form.danceability.label }}</label>
                     {{ form.danceability }}
                 </div>
                 <div class="Setting">
-                    {{ form.energy.label }}
+                    <label>{{ form.energy.label }}</label>
                     {{ form.energy }}
                 </div>
                 <div class="Setting">
-                    {{ form.instrumentalness.label }}
+                    <label>{{ form.instrumentalness.label }}</label>
                     {{ form.instrumentalness }}
                 </div>
                 
                 {{ form.submit }}
             </form> 
     </div>
-    <div class="CuratorSettings">
-        
     </div>
+    
 </div>

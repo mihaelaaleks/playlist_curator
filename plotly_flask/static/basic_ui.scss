@@ -9,6 +9,7 @@ $primary-text-border: #D9D9D9;
 $border-radius: 10px;
 
 $default-padding: 15px;
+$small-padding: 2px;
 $panel-gap: 8px;
 $padding-top-bottom: 8px;
 $padding-right-left: 12px;
@@ -16,12 +17,28 @@ $padding-right-left: 12px;
 
 // font
 $default-font: 'Inter', sans-serif;
-$font-weight: 400;
-$plain-text-size: 20px;
-$title-size: 60px;
+$default-font-weight: 400;
+$heavy-font-weight: 700;
+
+$plain-text-size: 16px;
+$subtitle-size: 20px;
 $medium-text-size: 30px;
 $card-size: 200px;
 $img-small: 150px;
+
+@mixin button-bg($bg) {
+    background: $bg;
+    &:hover {
+      background:darken($bg,8%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      background:darken($bg,25%);
+    }
+    &:focus {
+        background:darken($bg,25%);
+    } 
+  }
 
 body {
     background-color: $background-color;
@@ -54,11 +71,11 @@ input {
     text-decoration: none;
     font-family: $default-font;
     font-size: $plain-text-size;
-    font-weight: 700;
+    font-weight: $default-font-weight;
     border-color: $primary-text-border;
     background-color: $primary-color;
     color: $primary-text-border;
-    padding: $padding-right-left;
+    padding: $padding-top-bottom;
 }
 
 
@@ -84,6 +101,12 @@ h1 {
     color: $primary-text-border;
 }
 
+h2 {
+    font-family: $default-font;
+    font-size: $subtitle-size;
+    color: $primary-text-border;
+}
+
 footer {
     padding: $default-padding;
     border-radius: $border-radius;
@@ -96,11 +119,12 @@ button {
     text-align: center;
     text-decoration: none;
     font-family: $default-font;
+    font-weight: $default-font-weight;
     font-size: $plain-text-size;
-    font-weight: 700;
     border-color: $primary-text-border;
     background-color: $primary-color;
     color: $primary-text-border;
+    padding: $padding-top-bottom;
 }
 
 .trackList {
@@ -115,7 +139,7 @@ button {
 }
 
 .subtitle {
-    font-weight: $font-weight;
+    font-weight: $default-font-weight;
     color: $primary-accent-1;
 }
 
@@ -139,7 +163,8 @@ button {
 .secondaryButton {
     color: $primary-text-border;
     background-color: $primary-color;
-    padding: $padding-right-left;
+    padding: $padding-top-bottom;
+    @include button-bg($primary-color);
 }
 
 .primaryButtonAccent1 {
@@ -147,6 +172,8 @@ button {
     background-color: $primary-accent-1;
     padding: $padding-right-left;
     border: none;
+    font-weight: $heavy-font-weight;
+    @include button-bg($primary-accent-1);
 }
 
 .primaryButtonAccent2 {
@@ -154,6 +181,8 @@ button {
     background-color: $primary-accent-2;
     padding: $padding-right-left;
     border: none;
+    font-weight: $heavy-font-weight;
+    @include button-bg($primary-accent-2);
 }
 
 .container {
@@ -161,6 +190,21 @@ button {
     border-radius: $border-radius;
     background-color: $primary-color;
     overflow-x: scroll;
+    overflow: hidden;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $padding-top-bottom;
+}
+
+.dashboardContainer {
+    padding: $default-padding;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+    overflow-x: scroll;
+    overflow: hidden;
 }
 
 .settingsContainer {
@@ -168,6 +212,22 @@ button {
     display: flex;
     grid-auto-flow: column;
     gap: $panel-gap;
+    
+}
+
+.Setting {
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    font-weight: $default-font-weight;
+    font-size: $plain-text-size;
+    display: block; 
+    float: left; 
+    width: 170px;
 }
 
 .statCard {
@@ -176,11 +236,13 @@ button {
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: auto;
+    width: fit-content;
 }
 
 .statContainer {
     padding: $default-padding;
     border-radius: $border-radius;
+    background-color: $primary-color;
 }
 
 
@@ -189,6 +251,7 @@ button {
     display: grid;
     grid-auto-flow: column;
     gap: $panel-gap;
+    overflow-x: scroll;
 }
 
 .playlistCard {

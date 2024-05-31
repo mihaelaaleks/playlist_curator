@@ -1,35 +1,19 @@
 from dataclasses import dataclass
+from itertools import chain
+from pathlib import Path
 from re import split
+from typing import Any
+
+import numpy as np
+import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-import pandas as pd
-from pathlib import Path
+
 from plotly_flask.models.track import Track
 
-# TODO:
-# make the "t_" numeric values into some dataclass thing
-#   like class RecommendParams:
-# then you can build in the "percent" convert there.
-#   Then the "get_cleaned_recommendations" and "get_recommendation_tracks"
-#   could be methods of this "RecommendParams"
-#   so you'd call like
-#   params = RecommendParams(<numeric_parts>)
-#
-#   # Object Oriented
-#   recommendations = params.get_recommendations(spotify, limit)
-#
-#   # DependencyInjection
-#   recommendations = get_cleaned_recommendations(
-#       spotify=spotify,
-#       limit=limit,
-#       recommend_params= params,
-#   )
-#   tracks = get_recommendation_tracks(
-#       spotify=spotify,
-#       limit=limit,
-#       recommend_params= params,
-#   )
-#
+_T_SPOTIFY_TRACK = Any
+
+DEFAULT_N_SAMPLE = 4
 
 
 def split_into_chunks(lst: list, chunk_size: int = 4):
@@ -37,6 +21,8 @@ def split_into_chunks(lst: list, chunk_size: int = 4):
 
 
 def create_spotify(scope: str = "user-library-read user-top-read") -> spotipy.Spotify:
+    # TODO: Fix when case of other new input users to be authenticated for the first time.
+    #   i.e. currently e-mails have to be whitelisted, this will need to be looked into.
     return spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
 
@@ -47,63 +33,56 @@ def get_genre_seeds(spotify: spotipy.Spotify) -> list:
     return genres
 
 
-def get_multi_recommendation_tracks(spotify, genre_list):
+def get_multi_recommendation_tracks(
+    spotify: spotipy.Spotify, genre_list
+) -> list[Track]:
     chunked_genres = split_into_chunks(genre_list)
-    tracklist = []
+    tracks_chunks = []
     for chunk in chunked_genres:
         track_data = get_recommendation_tracks(spotify=spotify, genres=chunk)
-        track_df = clean_track_recommendations(track_data)
-        tracklist = df_to_track_obj(track_df)
-    return tracklist
+        tracks_chunk = create_list_of_tracks(track_data)
+        tracks_chunks.append(tracks_chunk)
+    return list(chain(*tracks_chunks))
 
 
 def get_recommendation_tracks(
     spotify: spotipy.Spotify,
     genres: list,
 ):
+    """Given a list of genres get back a list of recommended tracks.
+
+    Tracks are in a shape like:
+    https://developer.spotify.com/documentation/web-api/reference/get-track
+    """
+    # TODO: looking at the recommendations there's probably some interesting room to
+    # play here too.
     response = spotify.recommendations(seed_genres=genres)
     if response is not None:
         recommended = response["tracks"]
     return recommended
 
 
-def clean_track_recommendations(track_data):
-    cleaned_track_list = {}
-    dfs = []
+def get_sample_of_recommendation_from_tracks(
+    spotify: spotipy.Spotify, tracks: list, n_sample: int = DEFAULT_N_SAMPLE
+):
+    seed_tracks = np.random.choice(tracks, size=n_sample)
+    response = spotify.recommendations(seed_tracks=list(seed_tracks))
+    if response is not None:
+        recommended = response["tracks"]
+    return recommended
+
+
+def create_list_of_tracks(track_data: _T_SPOTIFY_TRACK) -> list[Track]:
+    tracks = []
     for item in track_data:
-        cleaned_track_list["track_id"] = item["id"]
-        cleaned_track_list["track_name"] = item["name"]
-        cleaned_track_list["track_url"] = item["external_urls"]["spotify"]
-        # temporary fix
-        # takes the first artist in a list
-        cleaned_track_list["artist_name"] = item["artists"][0]
-        cleaned_track_list["album_id"] = item["album"]["id"]
-        cleaned_track_list["image"] = item["album"]["images"]
-        cleaned_track_list["track_popularity"] = item["popularity"]
-        df = pd.DataFrame([cleaned_track_list])
-        dfs.append(df)
-    recommended_tracks_df = pd.concat(dfs)
-    return recommended_tracks_df
-
-
-def df_to_track_obj(tracklist_df):
-    track_rec_list = []
-    for index, row in tracklist_df.iterrows():
-        track_id = row["track_id"]
-        track_name = row["track_name"]
-        track_url = row["track_url"]
-        artist_name = row["artist_name"]
-        album_id = row["album_id"]
-        track_image = row["image"]
-        track_popularity = row["track_popularity"]
         track = Track(
-            track_name=track_name,
-            track_id=track_id,
-            track_url=track_url,
-            track_popularity=track_popularity,
-            image=track_image,
-            artist_name=artist_name,
-            album_id=album_id,
+            id=item["id"],
+            name=item["name"],
+            url=item["external_urls"]["spotify"],
+            artists=item["artists"],
+            album_image=item["album"]["images"],
+            album_id=item["album"]["id"],
+            track_popularity=item["popularity"],
         )
-        track_rec_list.append(track)
-    return track_rec_list
+        tracks.append(track)
+    return tracks

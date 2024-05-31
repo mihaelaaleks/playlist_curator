@@ -1,6 +1,7 @@
-from dash import Dash, html, dcc, Input, Output
-from plotly_flask.models import playlist_logic
 import plotly.express as px
+from dash import Dash, Input, Output, dcc, html
+
+from plotly_flask.models import playlist_logic
 
 PLOTLY_THEME = "plotly_dark"
 CHART_TITLE = "Artist Counts"
@@ -41,7 +42,7 @@ def init_callbacks(dash_app):
         playlist_id = pathname.split("/")[PATH_SPLIT_INDEX]
         print(f"playlist id:{playlist_id}")
 
-        df = playlist_logic.get_tracklist_w_labels(playlist_id)
+        df = playlist_logic.get_tracks_df_from_playlist_id(playlist_id)
         artist_counts = df["artist_name"].value_counts()
 
         # Create pie chart

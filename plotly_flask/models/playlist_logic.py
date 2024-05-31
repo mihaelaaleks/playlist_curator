@@ -1,5 +1,7 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
+
 from plotly_flask.models.playlist import Playlist
 
 file_dir_path = Path(__file__).parent.parent.parent / Path("data")
@@ -7,12 +9,16 @@ file_dir_path = Path(__file__).parent.parent.parent / Path("data")
 playlist_file_name = Path("my_presentable_playlists.pkl")
 track_playlist_map = Path("playlist_id_map.pkl")
 
-playlist_path = file_dir_path / playlist_file_name
+PLAYLIST_PATH = file_dir_path / playlist_file_name
 track_path = file_dir_path / track_playlist_map
 
 
+def read_pickle_playlist(playlist_path: Path = PLAYLIST_PATH) -> pd.DataFrame:
+    return pd.read_pickle(playlist_path)
+
+
 def df_to_playlist_obj():
-    playlist_df = pd.read_pickle(playlist_path)
+    playlist_df = pd.read_pickle(PLAYLIST_PATH)
     playlist_obj_list = []
     for _, row in playlist_df.iterrows():
         playlist_name = row["name"]
@@ -25,13 +31,13 @@ def df_to_playlist_obj():
     return playlist_obj_list
 
 
-def get_tracklist(playlist_id: str):
+def get_tracklist(playlist_id: str) -> list:
     df = pd.read_pickle(track_path)
     entries = df.loc[df["playlist_id"] == playlist_id].values
     return entries.tolist()
 
 
-def get_tracklist_w_labels(playlist_id: str):
+def get_tracks_df_from_playlist_id(playlist_id: str):
     df = pd.read_pickle(track_path)
     df = df.rename(
         columns={

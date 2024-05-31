@@ -35,6 +35,9 @@ For troubleshooting visit the official Python docs on how to set up a [virtual e
 ## Configuration
 If the software is configurable, describe it in detail, either here or in other documentation to which you link.
 
+
+
+
 ## Usage
 Show users how to use the software. Be specific. Use appropriate formatting when showing code snippets.
 

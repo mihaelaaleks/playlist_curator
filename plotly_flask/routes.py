@@ -1,11 +1,13 @@
 """Routes for parent Flask app."""
 
-from flask import render_template, flash, redirect, url_for, request
+from flask import Request
 from flask import current_app as app
-
+from flask import jsonify, redirect, render_template, request
+from spotipy import Spotify
 
 from plotly_flask.models import curator_logic, playlist_logic
-from .forms import CuratorForm
+
+from .forms import CuratorForm, CuratorTypeForm
 
 
 @app.route("/")
@@ -39,36 +41,81 @@ def show_playlist(playlist_id):
     return render_template(
         "dashboard.html",
         tracklist=tracklist,
-        playlist_id = playlist_id,
+        playlist_id=playlist_id,
         playlists=playlist_list,
-        avg = avg_popularity,
+        avg=avg_popularity,
     )
 
 
-@app.route("/curator", methods=["GET", "POST"])
+def _do_curator_from_scratch_post(spotify: Spotify, form: CuratorForm) -> str:
+    genre_select_result = form.genre_select.data
+    recommended_tracks = curator_logic.get_multi_recommendation_tracks(
+        spotify, genre_select_result
+    )
+    return render_template(
+        "recommended_panel.html", track_recommendations=recommended_tracks
+    )
+
+
+@app.route("/curator/", methods=["GET", "POST"])
 def curator():
     """Playlist curator page."""
+    form: CuratorTypeForm = CuratorTypeForm()
+    if form.validate_on_submit():
+        if form.from_scratch.data:
+            return redirect("from_scratch")
+        elif form.from_playlist.data:
+            return redirect("from_playlist")
+    return render_template("curator.html", form=form)
+
+
+@app.route("/api/playlists", methods=["GET"])
+def get_playlists():
+    playlists = playlist_logic.df_to_playlist_obj()
+    playlist_data = [
+        {"id": playlist.id, "name": playlist.name, "image": playlist.image}
+        for playlist in playlists
+    ]
+    return jsonify(playlist_data)
+
+
+@app.route("/curator/<curator_type>", methods=["GET", "POST"])
+def curator_redirect(curator_type):
+    if curator_type == "from_scratch":
+        return _curator_from_scratch(request)
+    elif curator_type == "from_playlist":
+        return _curator_from_playlist(request)
+
+
+def _curator_from_playlist(request: Request) -> str:
     spotify = curator_logic.create_spotify()
-    form = CuratorForm(request.form)
+    form = CuratorForm()
     if request.method == "GET":
-        genres = curator_logic.get_genre_seeds(spotify)
-        form.genre_select.choices = genres
-    playlist_list = playlist_logic.df_to_playlist_obj()
-    track_recommendations = []
+        return render_template("curator_from_playlist.html", form=form)
     if request.method == "POST":
-        form_result = request.form.to_dict(flat=False)
-        genre_select_result = form_result["genre_select"]
-        print(curator_logic.split_into_chunks(genre_select_result))
-        recommended_tracks = curator_logic.get_multi_recommendation_tracks(spotify, genre_select_result)
+        # The request.form.get can retrieve the name of a form field
+        # without needing to therefore use a wtf-form
+        selected_playlist_id = request.form.get("selected_playlist_id")
+        df = playlist_logic.get_tracks_df_from_playlist_id(selected_playlist_id)
+        tracks = list(df["track_id"])
+        recommended_tracks = curator_logic.get_sample_of_recommendation_from_tracks(
+            spotify, tracks, 4
+        )
         return render_template(
             "recommended_panel.html", track_recommendations=recommended_tracks
         )
-    return render_template(
-        "curator.html",
-        playlists=playlist_list,
-        track_recommendations=track_recommendations,
-        form=form,
-        template="curator-template",
-    )
-    
 
+
+def _curator_from_scratch(request: Request) -> str:
+    spotify = curator_logic.create_spotify()
+    form = CuratorForm()
+    if request.method == "GET":
+        return render_template("curator_from_scratch.html", form=form)
+    if request.method == "POST":
+        genre_select_result = form.genre_select.data
+        recommended_tracks = curator_logic.get_multi_recommendation_tracks(
+            spotify, genre_select_result
+        )
+        return render_template(
+            "recommended_panel.html", track_recommendations=recommended_tracks
+        )

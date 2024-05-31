@@ -1,21 +1,9 @@
 <div class="container">
-    <h1>Curate playlist: </h1>
-    <div class="miniNavbar">
-        <button class="secondaryButton">from scratch</button>
-        <button class="secondaryButton">from own playlist</button>
-        <button class="secondaryButton">from link</button>
-        <button class="secondaryButton">random</button>
-    </div>
-    <div class="container">
-        <h2>Playlist settings: </h2>
+    <h2>Choose a genre: </h2>
     <div class="settingsContainer">
-            <form name="" method="POST" style="width: 100%;">
-                <div class="Setting">
-                    {{ form.genre_select }}
-                </div>
-                {{ form.submit }}
-            </form> 
+        <form method="POST" style="width: 100%;">
+            {{ form.genre_select }}
+            {{ form.submit }}
+        </form>
     </div>
-    </div>
-    
 </div>

@@ -9,27 +9,21 @@
     <div class="container">
         <h2>Playlist settings: </h2>
     <div class="settingsContainer">
-            <form method="POST">
-                <div class="Setting">
-                    <label>{{ form.acousticness.label }}</label>
-                    {{ form.acousticness }}
+            <form name="" method="POST" style="width: 100%;">
+                {{ form.artist_select.label }}
+                <div class="Setting">  
+                    {{ form.artist_select }}
                 </div>
-                <div class="Setting">
-                    <label>{{ form.danceability.label }}</label>
-                    {{ form.danceability }}
+                {{ form.track_select.label }}
+                <div class="Setting">   
+                    {{ form.track_select }}
                 </div>
+                {{ form.genre_select.label }}
                 <div class="Setting">
-                    <label>{{ form.energy.label }}</label>
-                    {{ form.energy }}
+                    {{ form.genre_select }}
                 </div>
-                <div class="Setting">
-                    <label>{{ form.instrumentalness.label }}</label>
-                    {{ form.instrumentalness }}
-                </div>
-                
                 {{ form.submit }}
             </form> 
     </div>
-    </div>
-    
+    </div>   
 </div>

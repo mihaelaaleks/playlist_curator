@@ -4,8 +4,7 @@ from flask import render_template, flash, redirect, url_for, request
 from flask import current_app as app
 
 
-from plotly_flask.models import playlist_logic
-from plotly_flask.models import curator_logic
+from plotly_flask.models import curator_logic, playlist_logic
 from .forms import CuratorForm
 
 
@@ -49,22 +48,22 @@ def show_playlist(playlist_id):
 @app.route("/curator", methods=["GET", "POST"])
 def curator():
     """Playlist curator page."""
-    playlist_list = playlist_logic.df_to_playlist_obj()
+    spotify = curator_logic.create_spotify()
     form = CuratorForm(request.form)
+    if request.method == "GET":
+        genres = curator_logic.get_genre_seeds(spotify)
+        form.genre_select.choices = genres
+    playlist_list = playlist_logic.df_to_playlist_obj()
     track_recommendations = []
     if request.method == "POST":
-
-        spotify = curator_logic.create_spotify()
-        track_recommendations = curator_logic.get_cleaned_recommendations(
-            spotify=spotify,
-            limit=50,
-            t_acousticness=form.acousticness.data,
-            t_danceability=form.danceability.data,
-            t_energy=form.energy.data,
-            t_instrumentalness=form.instrumentalness.data,
-        )
+        form_result = request.form.to_dict(flat=False)
+        print(form_result["artist_select"])
+        print(form_result["track_select"])
+        genre_select_result = form_result["genre_select"]
+        print(curator_logic.split_into_chunks(genre_select_result))
+        recommended_tracks = curator_logic.get_multi_recommendation_tracks(spotify, genre_select_result)
         return render_template(
-            "recommended_panel.html", track_recommendations=track_recommendations
+            "recommended_panel.html", track_recommendations=recommended_tracks
         )
     return render_template(
         "curator.html",
@@ -73,3 +72,5 @@ def curator():
         form=form,
         template="curator-template",
     )
+    
+

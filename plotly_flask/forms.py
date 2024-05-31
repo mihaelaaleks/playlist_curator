@@ -11,9 +11,12 @@ class CuratorForm(FlaskForm):
     liveness = wtf.IntegerRangeField('liveness', [DataRequired()])
     popularity = wtf.IntegerRangeField('popularity', [DataRequired()])
     
+    artist_select = wtf.StringField(label='artists', validators= [DataRequired()])
+    track_select = wtf.StringField(label ='tracks', validators= [DataRequired()])
+    
     # wtforms does not support dynamic choices
     # the query isn't consistently called when the form is loaded
-    genre_select = wtf.SelectMultipleField(choices = genre_logic.genre_json_to_list(),
+    genre_select = wtf.SelectMultipleField(label='genre',choices = genre_logic.genre_json_to_list(),
                                            coerce= str,
                                            validators=[DataRequired()])
     submit = wtf.SubmitField('Submit')

@@ -57,6 +57,8 @@ def curator():
     track_recommendations = []
     if request.method == "POST":
         form_result = request.form.to_dict(flat=False)
+        print(form_result["artist_select"])
+        print(form_result["track_select"])
         genre_select_result = form_result["genre_select"]
         print(curator_logic.split_into_chunks(genre_select_result))
         recommended_tracks = curator_logic.get_multi_recommendation_tracks(spotify, genre_select_result)

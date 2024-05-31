@@ -10,12 +10,20 @@
         <h2>Playlist settings: </h2>
     <div class="settingsContainer">
             <form name="" method="POST" style="width: 100%;">
+                {{ form.artist_select.label }}
+                <div class="Setting">  
+                    {{ form.artist_select }}
+                </div>
+                {{ form.track_select.label }}
+                <div class="Setting">   
+                    {{ form.track_select }}
+                </div>
+                {{ form.genre_select.label }}
                 <div class="Setting">
                     {{ form.genre_select }}
                 </div>
                 {{ form.submit }}
             </form> 
     </div>
-    </div>
-    
+    </div>   
 </div>

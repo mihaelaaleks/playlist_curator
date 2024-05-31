@@ -9,24 +9,10 @@
     <div class="container">
         <h2>Playlist settings: </h2>
     <div class="settingsContainer">
-            <form method="POST">
+            <form name="" method="POST" style="width: 100%;">
                 <div class="Setting">
-                    <label>{{ form.acousticness.label }}</label>
-                    {{ form.acousticness }}
+                    {{ form.genre_select }}
                 </div>
-                <div class="Setting">
-                    <label>{{ form.danceability.label }}</label>
-                    {{ form.danceability }}
-                </div>
-                <div class="Setting">
-                    <label>{{ form.energy.label }}</label>
-                    {{ form.energy }}
-                </div>
-                <div class="Setting">
-                    <label>{{ form.instrumentalness.label }}</label>
-                    {{ form.instrumentalness }}
-                </div>
-                
                 {{ form.submit }}
             </form> 
     </div>

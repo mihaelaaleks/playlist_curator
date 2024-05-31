@@ -1,66 +1,70 @@
+from dataclasses import dataclass
+from re import split
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import pandas as pd
 from pathlib import Path
-
-
 from plotly_flask.models.track import Track
-from app.utils import get_tag, get_link
+
+# TODO:
+# make the "t_" numeric values into some dataclass thing
+#   like class RecommendParams:
+# then you can build in the "percent" convert there.
+#   Then the "get_cleaned_recommendations" and "get_recommendation_tracks"
+#   could be methods of this "RecommendParams"
+#   so you'd call like
+#   params = RecommendParams(<numeric_parts>)
+#
+#   # Object Oriented
+#   recommendations = params.get_recommendations(spotify, limit)
+#
+#   # DependencyInjection
+#   recommendations = get_cleaned_recommendations(
+#       spotify=spotify,
+#       limit=limit,
+#       recommend_params= params,
+#   )
+#   tracks = get_recommendation_tracks(
+#       spotify=spotify,
+#       limit=limit,
+#       recommend_params= params,
+#   )
+#
+
+
+def split_into_chunks(lst: list, chunk_size: int = 4):
+    return [lst[i : i + chunk_size] for i in range(0, len(lst), chunk_size)]
 
 
 def create_spotify(scope: str = "user-library-read user-top-read") -> spotipy.Spotify:
     return spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
 
-def get_recently_played(limit: int, spotify: spotipy.Spotify):
-    """get top recently played tracks from users Spotify
-
-    Args:
-        limit (int): number of items to retrieve, must be less than 100
-        spotify (spotipy.Spotify): _description_
-
-    Returns:
-        dict: Json response
-    """
-    if limit >= 100:
-        raise ValueError("Limit must not exceed 100")
-    response = spotify.current_user_recently_played(limit=limit)
-    return response
+def get_genre_seeds(spotify: spotipy.Spotify) -> list:
+    response = spotify.recommendation_genre_seeds()
+    if response is not None:
+        genres = response["genres"]
+    return genres
 
 
-# TODO:
-# the transormation of the acousticness/danceability is a little awkward
-# the percentage divison should happen in the form/route
+def get_multi_recommendation_tracks(spotify, genre_list):
+    chunked_genres = split_into_chunks(genre_list)
+    tracklist = []
+    for chunk in chunked_genres:
+        track_data = get_recommendation_tracks(spotify=spotify, genres=chunk)
+        track_df = clean_track_recommendations(track_data)
+        tracklist = df_to_track_obj(track_df)
+    return tracklist
+
+
 def get_recommendation_tracks(
     spotify: spotipy.Spotify,
-    limit: int = 20,
-    t_acousticness: int = 50,
-    t_danceability: int = 50,
-    t_energy: int = 50,
-    t_instrumentalness: int = 50,
+    genres: list,
 ):
-    """get a list of recommended tracks based on attributes
-
-    Args:
-        limit (int): number of items to retrieve, must be less than 100
-        spotify (spotipy.Spotify): spotify instance
-        target_<attr>: audio features for generating recommendation
-
-    Returns:
-        dict: Json response
-    """
-    s_artists = ["6XYvaoDGE0VmRt83Jss9Sn", "07b9qW7pabKGO29JPWXn9m"]
-    if limit >= 100:
-        raise ValueError("Limit must not exceed 100")
-    response = spotify.recommendations(
-        limit=limit,
-        seed_artists=s_artists,
-        target_acousticness=t_acousticness / 100,
-        target_danceability=t_danceability / 100,
-        target_energy=t_energy / 100,
-        target_instrumentalness=t_instrumentalness / 100,
-    )
-    return response["tracks"]
+    response = spotify.recommendations(seed_genres=genres)
+    if response is not None:
+        recommended = response["tracks"]
+    return recommended
 
 
 def clean_track_recommendations(track_data):
@@ -103,31 +107,3 @@ def df_to_track_obj(tracklist_df):
         )
         track_rec_list.append(track)
     return track_rec_list
-
-
-# TODO:
-# tracks is a list
-#
-def get_cleaned_recommendations(
-    spotify: spotipy.Spotify,
-    limit: int,
-    t_acousticness: int,
-    t_danceability: int,
-    t_energy: int,
-    t_instrumentalness: int,
-):
-    track_data = get_recommendation_tracks(
-        limit=limit,
-        spotify=spotify,
-        t_acousticness=t_acousticness,
-        t_danceability=t_danceability,
-        t_energy=t_energy,
-        t_instrumentalness=t_instrumentalness,
-    )
-
-    rec_df = clean_track_recommendations(track_data=track_data)
-    rec_df['image'] = rec_df['image'].apply(lambda x: get_link(x))
-    rec_df['artist_name'] = rec_df['artist_name'].apply(lambda x: get_tag(x, 'name'))
-
-    track_list = df_to_track_obj(rec_df)
-    return track_list

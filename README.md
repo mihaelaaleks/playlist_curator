@@ -75,3 +75,19 @@ When your changes are complete then create a Pull Request ensuring that your bra
     Projects that inspired you
     Related projects
     Books, papers, talks, or other sources that have meaningful impact or influence on this project
+
+
+## Goal structure
+
+```
+\backend_service
+    .env
+    pyproject.toml # maybe this is in backend service?
+    \tests
+    \data
+\frontend_service
+    \tests
+    \data
+LICENSE
+README.md
+```

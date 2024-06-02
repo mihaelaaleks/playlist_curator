@@ -1,11 +1,10 @@
-import pytest
 import pandas as pd
-from plotly_flask.models.playlist_logic import (
+import pytest
+
+from app.spotipy_requests import create_spotify
+from backend_service.plotly_flask.models.playlist_logic import (
     get_tracklist,
     get_tracklist_w_labels,
-)
-from app.spotipy_requests import (
-    create_spotify,
 )
 
 

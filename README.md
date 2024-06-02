@@ -1,4 +1,3 @@
-
 # Playlist Curator
 Welcome to the Playlist Curator repository, a place to analyze, curate and tweak your Spotify playlists!
 
@@ -31,6 +30,16 @@ Install the required packages to run the project from the provided `pyproject.to
 `python3 -m pip install -e .[dev]`
 
 For troubleshooting visit the official Python docs on how to set up a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
+
+## How to run
+
+### Backend
+
+Assuming fastapi is installed, then simply running the `app/main.py` will work. That script will start the uvicorn server and connect the routes the fastapi app.
+
+### Frontend
+
+<!-- TODO: add section here for how to run vue and what installs are needed -->
 
 ## Configuration
 If the software is configurable, describe it in detail, either here or in other documentation to which you link.

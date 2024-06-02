@@ -11,13 +11,18 @@ class Track(BaseModel):
     # TODO: check on front end of embed. It seems like only the id is needed
     #   hence, no need to pass things like the artists.
     id: str
-    name: str
+    name: str | None = None
 
 
 class Playlist(BaseModel):
     id: str
     name: str
     image_url: str
+
+
+class PlaylistCreator(BaseModel):
+    name: str  # name of playlist
+    tracks: list[Track]
 
 
 # TODO: So for all the different attributes, they have slightly

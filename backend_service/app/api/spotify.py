@@ -5,12 +5,12 @@ from ..models import curator
 from ..models.spotify import (
     Attribute,
     CurrateInput,
-    CurrateSeeder,
     Genre,
     Playlist,
+    PlaylistCreator,
     Track,
 )
-from ..utils.spotify import create_spotify
+from ..utils.spotify import create_spotify, create_spotify_for_playlist_modification
 
 router = APIRouter(
     prefix="/spotify",
@@ -42,7 +42,7 @@ async def get_playlists() -> list[Playlist]:
 
 @router.post("/curate")
 async def curate(input: CurrateInput) -> list[Track]:
-    """Parase the currate input response body into kwargs to be used by
+    """Parse the currate input response body into kwargs to be used by
     the spotify recommendation algorithm.
 
     This endpoint is meant to provide flexibility to pass in whatever combination
@@ -64,6 +64,12 @@ async def curate(input: CurrateInput) -> list[Track]:
 
 @router.get("/get_genres")
 async def get_genres() -> list[Genre]:
+    """Endpoint get the list of all possible recommendation genre seeds
+    available from the spotify API.
+
+    Returns:
+        list[Genre]: List of genres usable as recommendation seeds.
+    """
     spotify = create_spotify()
     genres = spotify.recommendation_genre_seeds()
     return [Genre(name=name) for name in genres["genres"]]
@@ -96,7 +102,23 @@ async def get_number_range_recommendation_attributes() -> list[str]:
 
 @router.get("/get_recommendation_attributes/me")
 async def get_attributes() -> list[Attribute]:
-    # TODO: This shouldn't be from a user id, this should be
-    # from the "/me" and then we get back their prefered default
-    # settings or something.
-    return RedirectResponse(url="/spotify/get_recommendation_attributes/all")
+    """Endpoint function for getting attributes specific to the logged in user.
+
+    TBD, this is still a work in progress. Eventually, it'd be cool to have
+    a logged in user configure which attributes they like to play with on the
+    UI. Hence, this endpoint exists to return the attributes for that user.
+
+    Returns:
+        list[Attribute]: List of attributes for the logged in user.
+    """
+    return RedirectResponse(url="/spotify/get_recommendation_attributes/number_range")
+
+
+@router.post("/create_playlist")
+async def create_playlist(creator: PlaylistCreator):
+    spotify = create_spotify_for_playlist_modification()
+    user = spotify.current_user()
+    playlist_response = spotify.user_playlist_create(user=user["id"], name=creator.name)
+    playlist_id = playlist_response["id"]
+    tracks = [track.id for track in creator.tracks]
+    spotify.playlist_add_items(playlist_id, tracks)

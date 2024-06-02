@@ -21,7 +21,12 @@ class Playlist(BaseModel):
 
 
 # TODO: So for all the different attributes, they have slightly
-#   annoyingly different rules. Hence,
+#   annoyingly different rules.
+#   yeah this will for sure be the most annoying thing to do
+#   but doing it well from the python should then make it
+#   easy for the front end to communicate
+# Leo don't be silly, this is pydantic so you can just build this
+# as some "base attribute model" and then pass that.
 class Attribute(BaseModel):
     name: str
     target: float

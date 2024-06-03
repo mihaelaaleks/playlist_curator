@@ -26,7 +26,8 @@ import { RouterLink, RouterView } from 'vue-router'
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 1px;
-  grid-row-gap: 1px; 
+  grid-row-gap: 1px;
+  position: absolute;
 }
 
 .header-grid {

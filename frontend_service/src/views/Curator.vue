@@ -1,45 +1,79 @@
 <script>
 import DropDown from '../components/DropDown.vue';
 import Slider from '../components/Slider.vue';
-import Toggle from '../components/Toggle.vue';
 import { ref } from 'vue';
+import axios from 'axios';
 
 export default {
     name: 'Curator',
     components: {
         DropDown,
         Slider,
-        Toggle
     },
     data() {
         return {
-            dropdownOptions: ['Option 1', 'Option 2', 'Option 3', 'fart', 'sjart'],
+            dropdownOptions: [],
             selectedDropdownOption: '',
             selectedSliderValue: 0,
-            sliders: [
-                { label: 'acousticness', value: 0 },
-                { label: 'danceability', value: 0 },
-                { label: 'energy', value: 0 },
-                { label: 'loudness', value: 0 }
-            ],
-            playlistToggleLabel: "playlist seed"
+            sliders: [],
+            responseItems: []
         };
+    },
+    async created() {
+        try {
+            const [sliderLabelsResponse, dropdownOptionsResponse] = await Promise.all([
+                axios.get('http://localhost:8000/spotify/get_recommendation_attributes/number_range'),
+                axios.get('http://localhost:8000/spotify/get_genres')
+            ]);
+
+            const sliderLabels = sliderLabelsResponse.data;
+            this.sliders = sliderLabels.map(label => ({
+                label,
+                value: 0
+            }));
+            this.dropdownOptions = dropdownOptionsResponse.data;
+        } catch (error) {
+            console.error('Error fetching form data:', error);
+        }
     },
     methods: {
         updateSliderValue(index, value) {
             this.sliders[index].value = value;
+        },
+        async submitFormData() {
+            try {
+                const requestData = {
+                    seed: {
+                        id: "genres",
+                        // values: [this.selectedDropdownOption]
+                        values: ["blues", "jazz"]
+                    },
+                    attributes: this.sliders.map(slider => ({
+                        name: slider.label,
+                        target: slider.value,
+                        tolerance: 0.2
+                    }))
+                };
+
+                const response = await axios.post('http://localhost:8000/spotify/curate', requestData);
+                
+                // Populate the responseItems array based on the API response
+                this.responseItems = response.data.items;
+            } catch (error) {
+                console.error('Error submitting form data:', error);
+            }
         }
-    }
+    },
 }
 </script>
 <template>
     <div class="parent-grid">
         <div class="L-child-grid">
             <div class="container-seeder">
-                <div class="title">Seeder</div>
-                <div class="container-vertical-items">
-                    <Toggle :label="playlistToggleLabel" />
-                </div           >
+                <div class="title" id="seeder-container-title">Seeder</div>
+                <div class="container-vertical-items"> 
+                    <button>Playlist Seed</button> 
+                </div>
                 <div class="container-settings">
                     <DropDown :options="dropdownOptions" label="Select an option" v-model="selectedDropdownOption" />
                     <!-- <p>Selected option in Curator: {{ selectedDropdownOption }}</p> -->
@@ -55,23 +89,24 @@ export default {
                 </div>
             </div>
             <div class="container-curate">
-                <input class="primary" type="button" value="Submit" />
+                <button @click="submitFormData">Get Recommendations</button>
             </div>
 
         </div>
         <div class="R-child-grid">
             <div class="title">Recommendations</div>
+            <ul>
+                <li v-for="(item, index) in responseItems" :key="index">{{ item }}</li>
+            </ul>
         </div>
     </div>
 </template>
 
 
 <style scoped>
-@import '../assets/base.css';
 
-
-input[type="checkbox"] {
-    transform: rotate(90deg);
+button {
+    width: -moz-available;
 }
 
 .parent-grid {
@@ -85,30 +120,44 @@ input[type="checkbox"] {
 
 .L-child-grid {
     grid-area: 1 / 1 / 3 / 3;
-
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 5px;
     grid-row-gap: 5px;
 }
 
 .container-seeder {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 5px;
-
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
     background-color: #181818;
-
     grid-area: 1 / 1 / 3 / 4;
-
+    height: fit-content;
 }
 
 .container-attributes {
     align-items: center;
     grid-area: 3 / 1 / 5 / 4;
+    height: fit-content;
+}
+
+.container-settings {
+    grid-area: 2 / 2 / 3 / 3;
+    align-content: center;
+    height:fit-content;
+    padding: 4px;
+    border-radius: 4px;
+    height:fit-content;
+}
+
+.container-vertical-items {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    gap: 1%;
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: #181818;
 }
 
 .container-curate {
@@ -129,21 +178,7 @@ input[type="checkbox"] {
     opacity: 50%;
 }
 
-.container-vertical-items {
-    display: flex;
-    flex-direction: column;
-    padding: 1%;
-    gap: 1%;
-    grid-area: 2 / 1 / 6 / 3;
-    background-color: #181818;
-}
 
-.container-settings {
-    grid-area: 1 / 3 / 6 / 6;
-    align-content: center;
-    height:fit-content;
-    padding: 4px;
-    border-radius: 4px;
 
-}
+
 </style>

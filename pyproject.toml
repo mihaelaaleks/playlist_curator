@@ -21,4 +21,4 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["app", "data", "notebooks", "plotly_flask"]
+packages = ["app", "data", "notebooks", "backend_service"]

@@ -8,26 +8,33 @@ import { RouterLink, RouterView } from 'vue-router'
       <header>
           <nav>
             <ul>
-              <RouterLink to="/curator">Curator</RouterLink>
-              <RouterLink to="/stats">Stats</RouterLink>
+              <li><RouterLink to="/curator">Curator</RouterLink></li>
+              <li><RouterLink to="/stats">Stats</RouterLink></li>
             </ul>
           </nav>
       </header>
     </div>
-    <div name="content-grid"><RouterView /></div>
+    <div name="content-grid" class="content-grid"><RouterView /></div>
   </div>
 </template>
 
 
 <style scoped>
 
+
 .parent {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 1px;
-  grid-row-gap: 1px;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
   position: absolute;
+}
+
+nav {
+  width:100%;
+  text-align: center;
+  border-radius: 6px;
 }
 
 .header-grid {
@@ -44,21 +51,9 @@ header {
   max-height: 100vh;
 }
 
-nav {
-  width:100%;
-  position: top;
-}
-
 .logo {
   display: block;
   margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {

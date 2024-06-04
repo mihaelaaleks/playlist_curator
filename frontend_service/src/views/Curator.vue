@@ -70,9 +70,9 @@ export default {
     <div class="parent-grid">
         <div class="L-child-grid">
             <div class="container-seeder">
-                <div class="title">Seeder</div>
-                <div class="container-vertical-items">
-                    
+                <div class="title" id="seeder-container-title">Seeder</div>
+                <div class="container-vertical-items"> 
+                    <button>Playlist Seed</button> 
                 </div>
                 <div class="container-settings">
                     <DropDown :options="dropdownOptions" label="Select an option" v-model="selectedDropdownOption" />
@@ -128,10 +128,9 @@ button {
 
 .container-seeder {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
     background-color: #181818;
     grid-area: 1 / 1 / 3 / 4;
     height: fit-content;
@@ -144,12 +143,21 @@ button {
 }
 
 .container-settings {
-    grid-area: 1 / 3 / 6 / 6;
+    grid-area: 2 / 2 / 3 / 3;
     align-content: center;
     height:fit-content;
     padding: 4px;
     border-radius: 4px;
     height:fit-content;
+}
+
+.container-vertical-items {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    gap: 1%;
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: #181818;
 }
 
 .container-curate {
@@ -170,14 +178,7 @@ button {
     opacity: 50%;
 }
 
-.container-vertical-items {
-    display: flex;
-    flex-direction: column;
-    padding: 1%;
-    gap: 1%;
-    grid-area: 2 / 1 / 6 / 3;
-    background-color: #181818;
-}
+
 
 
 </style>

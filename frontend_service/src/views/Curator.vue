@@ -1,6 +1,7 @@
 <script>
 import DropDown from '../components/DropDown.vue';
 import Slider from '../components/Slider.vue';
+// import TrackList from '../components/TrackList.vue';
 import { ref } from 'vue';
 import axios from 'axios';
 
@@ -9,6 +10,7 @@ export default {
     components: {
         DropDown,
         Slider,
+        // TrackList
     },
     data() {
         return {
@@ -31,7 +33,7 @@ export default {
                 label,
                 value: 0
             }));
-            this.dropdownOptions = dropdownOptionsResponse.data;
+            this.dropdownOptions = dropdownOptionsResponse.data.map(genre => genre.name);
         } catch (error) {
             console.error('Error fetching form data:', error);
         }
@@ -40,7 +42,7 @@ export default {
         updateSliderValue(index, value) {
             this.sliders[index].value = value;
         },
-        async submitFormData() {
+        async submitGetRecommendationFormData() {
             try {
                 const requestData = {
                     seed: {
@@ -89,15 +91,13 @@ export default {
                 </div>
             </div>
             <div class="container-curate">
-                <button @click="submitFormData">Get Recommendations</button>
+                <button @click="submitGetRecommendationFormData">Get Recommendations</button>
             </div>
 
         </div>
         <div class="R-child-grid">
             <div class="title">Recommendations</div>
-            <ul>
-                <li v-for="(item, index) in responseItems" :key="index">{{ item }}</li>
-            </ul>
+            <!-- <TrackList :tracks="responseItems" /> -->
         </div>
     </div>
 </template>

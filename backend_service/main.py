@@ -33,4 +33,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
+    # Note:
+    #   The debug run will trigger here.
+    #   The `fastapi run main.py` defaults to port=8000
+    uvicorn.run(app)

@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from fastapi.responses import RedirectResponse
+from spotipy import Spotify
 
 from ..models import curator
 from ..models.spotify import (
@@ -29,6 +30,11 @@ router = APIRouter(
     tags=["spotify"],
     responses={404: {"description": "Not found"}},
 )
+
+N_TRACKS_DESIRED = 1
+N_LIMIT_RUNS = 2
+BUMP_TOLERANCE = 0.7
+DEFAULT_START_TOLERANCE = 0.3
 
 
 @router.get("/get_playlists/me")
@@ -69,9 +75,56 @@ async def curate(input: CurrateInput) -> list[Track]:
         list[Track]: Tracks to be sent as part of request body JSON.
     """
     spotify = create_spotify()
-    response = spotify.recommendations(**input.as_recommendation_kwargs())
+    try:
+        return get_recommendations(spotify, input)
+    except Exception as err:
+        # TODO: reraise somehow? maybe to a 400 error?
+        raise err
+
+
+def get_recommendations(
+    spotify: Spotify,
+    input: CurrateInput,
+    n_runs: int = 1,
+    tolerance: float = DEFAULT_START_TOLERANCE,
+    tolerance_bump: float = BUMP_TOLERANCE,
+) -> list[Track]:
+    """Recursive call to recommendation with updated tolerance.
+
+    To ensure users always get "SOME" tracks returned.
+
+    If the input attributes result in no tracks recommended, try to recommend again
+    but use a higher tolerance.
+    This call will happen up to n_runs times.
+    Each time, the tolerance is increased by the tolerance bump.
+
+    Args:
+        spotify (Spotify): Spotify instance to produce recommendations from.
+        input (CurrateInput): Input base model to process attributes from.
+        n_runs (int, optional): Number of max runs to attempt. Starts at 1. Defaults to 1.
+        tolerance (float, optional): Tolerance to use for applying max, min attributes. Defaults to 0.1.
+        tolerance_bump (float, optional): Increase to tolerance to apply for each run. Defaults to 0.1.
+
+    Returns:
+        List[Track]: tracks returned by the input recommendation.
+    """
+    response = spotify.recommendations(
+        **input.as_recommendation_kwargs(attribute_tolerance=tolerance)
+    )
     tracks = response["tracks"]
-    return [Track(id=track["id"], name=track["name"]) for track in tracks]
+
+    # Just return what we have, we've ran enough times
+    if n_runs > N_LIMIT_RUNS:
+        return [Track(id=track["id"], name=track["name"]) for track in tracks]
+
+    # We didn't return enough tracks, let's try again.
+    if len(tracks) < N_TRACKS_DESIRED:
+        tolerance = tolerance + tolerance_bump
+        n_runs = n_runs + 1
+        return get_recommendations(spotify, input, n_runs=n_runs, tolerance=tolerance)
+    else:
+        track_list = [Track(id=track["id"], name=track["name"]) for track in tracks]
+        return track_list
 
 
 @router.get("/get_genres")

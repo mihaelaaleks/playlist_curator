@@ -16,7 +16,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins, # Do regex of ALL but that's kinda naughty
+    allow_origins=origins,  # Do regex of ALL but that's kinda naughty
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -33,4 +33,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=5000)
+    # Note:
+    #   The debug run will trigger here.
+    #   The `fastapi run main.py` defaults to port=8000
+    uvicorn.run(app)

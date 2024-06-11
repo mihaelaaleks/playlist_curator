@@ -8,10 +8,10 @@ from app.api import spotify, spotify_authenticate
 
 app = FastAPI()
 origins = [
-    "https://localhost",
-    "https://localhost:8000",
     "http://localhost",
     "http://localhost:5173",
+    "https://localhost:5173",
+    "http://localhost:5173/curator",
 ]
 
 app.add_middleware(

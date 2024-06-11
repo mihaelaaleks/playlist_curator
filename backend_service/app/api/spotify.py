@@ -19,9 +19,10 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
-N_TRACKS_DESIRED = 10
-N_LIMIT_RUNS = 5
-BUMP_TOLERANCE = 0.1
+N_TRACKS_DESIRED = 1
+N_LIMIT_RUNS = 2
+BUMP_TOLERANCE = 0.7
+DEFAULT_START_TOLERANCE = 0.3
 
 
 @router.get("/get_playlists/me")
@@ -73,7 +74,7 @@ def get_recommendations(
     spotify: Spotify,
     input: CurrateInput,
     n_runs: int = 1,
-    tolerance: float = 0.1,
+    tolerance: float = DEFAULT_START_TOLERANCE,
     tolerance_bump: float = BUMP_TOLERANCE,
 ) -> list[Track]:
     """Recursive call to recommendation with updated tolerance.

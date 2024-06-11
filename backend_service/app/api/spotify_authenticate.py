@@ -1,16 +1,15 @@
+import os
 import spotipy
 from fastapi import APIRouter, Request, Response
 from spotipy.oauth2 import SpotifyOAuth
+from dotenv import load_dotenv
 
-# TODO:
-# Also when auth is working, but the client id and secret should
-# be handled via the .env call.
-#   the "create_spotify" can already do that. But it's not
-#   clear to me how we'd even begin testing authentication since
-#   the computer knows its me already lol.
-CLIENT_ID = "a1d01cfdcbf64f74a10ed7a68b5c388d"
-CLIENT_SECRET = "0d891767d4a042f59d0615a16a844700"
-REDIRECT_URI = "https://localhost:8000/callback"
+#environment variable setup
+load_dotenv()
+
+CLIENT_ID = os.environ.get("SPOTIPY_CLIENT_ID")
+CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
+REDIRECT_URI = os.environ.get("SPOTIPY_REDIRECT_API")
 
 
 # TODO: this was just "suggested" by GPT as a way to store the

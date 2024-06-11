@@ -8,10 +8,10 @@ from app.api import spotify, spotify_authenticate
 
 app = FastAPI()
 origins = [
-    "https://localhost",
-    "https://localhost:8000",
     "http://localhost",
     "http://localhost:5173",
+    "https://localhost:5173",
+    "http://localhost:5173/curator",
 ]
 
 app.add_middleware(
@@ -33,4 +33,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=5000)

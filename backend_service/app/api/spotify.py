@@ -168,3 +168,13 @@ async def get_attributes() -> list[Attribute]:
     # from the "/me" and then we get back their prefered default
     # settings or something.
     return RedirectResponse(url="/spotify/get_recommendation_attributes/all")
+
+
+@router.post("/create_playlist")
+async def create_playlist(creator: PlaylistCreator):
+    spotify = create_spotify_for_playlist_modification()
+    user = spotify.current_user()
+    playlist_response = spotify.user_playlist_create(user=user["id"], name=creator.name)
+    playlist_id = playlist_response["id"]
+    tracks = [track.id for track in creator.tracks]
+    spotify.playlist_add_items(playlist_id, tracks)

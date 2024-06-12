@@ -10,6 +10,16 @@ def create_spotify(scope: str = "user-library-read user-top-read") -> spotipy.Sp
     load_dotenv()
     return spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
+def retry_create_spotify(
+    scope: str = "user-library-read user-top-read playlist-modify-private playlist-read-private",
+) -> spotipy.Spotify:
+    load_dotenv()
+    return spotipy.Spotify(
+        auth_manager=SpotifyOAuth(scope=scope),
+        # The default retry codes includes 429, maybe this causes the API endopint spam
+        status_forcelist=(500, 502, 503, 504),
+    )
+
 
 # TO DO
 def get_request_date():

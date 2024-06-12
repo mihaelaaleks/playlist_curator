@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'ContainerList',
+  name: 'TracklistCurator',
   props: {
     items: {
       type: Array,
@@ -21,18 +21,26 @@ export default {
         console.log("new items:", newItems);
       },
       deep: true,
+    },
+    actualItems: {
+      handler(newActualItems) {
+        this.$emit('update:actualItems', newActualItems)
+      },
+      deep: true,
     }
   },
   methods: {
     handleAddClick(item) {
       //remove item from recommendedItems array & add to actualItems
       this.recommendedItems = this.recommendedItems.filter((i) => i.id !== item.id);
-      this.actualItems.push(item);
+      // this.actualItems.push(item);
+      this.actualItems = [...this.actualItems, item];
     },
     handleRemoveClick(item) {
       //remove item from actualItems array & add back to recommendedItems
       this.actualItems = this.actualItems.filter((i) => i.id !== item.id);
-      this.recommendedItems.push(item);
+      // this.recommendedItems.push(item);
+      this.recommendedItems = [...this.recommendedItems, item];
     }
   }
 }

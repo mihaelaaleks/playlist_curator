@@ -73,6 +73,8 @@ class CurrateInput(BaseModel):
 
     def get_attribute_kwargs(self) -> dict:
         # Return a list of dictionaries of all the items.
+        if self.attributes is None:
+            return {}
         kwarg_list = [
             attribute.as_recommendation_kwargs() for attribute in self.attributes
         ]

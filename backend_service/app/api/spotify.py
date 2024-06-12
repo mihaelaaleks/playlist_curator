@@ -1,5 +1,9 @@
+import os
+
+from dotenv import load_dotenv
 from fastapi import APIRouter
 from fastapi.responses import RedirectResponse
+from spotipy import Spotify, SpotifyOAuth
 
 from ..models import curator
 from ..models.spotify import (
@@ -10,9 +14,6 @@ from ..models.spotify import (
     Playlist,
     Track,
 )
-import os
-from dotenv import load_dotenv
-from spotipy import Spotify, SpotifyOAuth
 
 load_dotenv()
 
@@ -20,8 +21,21 @@ CLIENT_ID = os.environ.get("SPOTIPY_CLIENT_ID")
 CLIENT_SECRET = os.environ.get("SPOTIPY_CLIENT_SECRET")
 REDIRECT_URI = os.environ.get("SPOTIPY_REDIRECT_URI")
 
-def create_spotify(scope: str = "user-library-read user-top-read playlist-modify-private playlist-read-private") -> Spotify:
+
+def create_spotify(
+    scope: str = "user-library-read user-top-read playlist-modify-private playlist-read-private",
+) -> Spotify:
     return Spotify(auth_manager=SpotifyOAuth(scope=scope))
+
+
+def retry_create_spotify(
+    scope: str = "user-library-read user-top-read playlist-modify-private playlist-read-private",
+) -> Spotify:
+    return Spotify(
+        auth_manager=SpotifyOAuth(scope=scope),
+        # The default retry codes includes 429, maybe this causes the API endopint spam
+        default_retry_codes=(500, 502, 503, 504),
+    )
 
 
 router = APIRouter(
@@ -50,6 +64,12 @@ async def get_playlists() -> list[Playlist]:
         Playlist(id=item["id"], name=item["name"], image_url=item["images"][0]["url"])
         for item in playlists_response["items"]
     ]
+
+
+@router.post("/delete")
+async def delete_playlist(playlist: Playlist):
+    spotify = create_spotify()
+    spotify.current_user_unfollow_playlist(playlist_id=playlist.id)
 
 
 @router.post("/curate")

@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from starlette import status
 
-from app.api import spotify, spotify_authenticate
+from backend_service.app.api import spotify, spotify_authenticate
 
 app = FastAPI()
 origins = [
@@ -16,7 +16,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins, # Do regex of ALL but that's kinda naughty
+    allow_origins=origins,  # Do regex of ALL but that's kinda naughty
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -1,47 +1,65 @@
 <mxfile host="65bd71144e">
     <diagram id="_6eTLL0yAIovUGPhj1NL" name="Page-1">
-        <mxGraphModel dx="2548" dy="1170" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+        <mxGraphModel dx="2424" dy="1372" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="Playlist curator" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" vertex="1" parent="1">
+                <mxCell id="2" value="Playlist curator" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" parent="1" vertex="1">
                     <mxGeometry x="40" y="40" width="1520" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Goal:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" vertex="1" parent="1">
+                <mxCell id="3" value="Goal:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" parent="1" vertex="1">
                     <mxGeometry x="40" y="720" width="240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;To give users control of their own recommendations.&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" vertex="1" parent="1">
+                <mxCell id="4" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;To give users control of their own recommendations.&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" parent="1" vertex="1">
                     <mxGeometry x="320" y="720" width="1240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="Why:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" vertex="1" parent="1">
+                <mxCell id="9" value="Why:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" parent="1" vertex="1">
                     <mxGeometry x="40" y="880" width="240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Spotify provides good recommendations.&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" vertex="1" parent="1">
+                <mxCell id="10" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Spotify provides good recommendations.&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" parent="1" vertex="1">
                     <mxGeometry x="320" y="880" width="600" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Can we improve that with finer controls?&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" vertex="1" parent="1">
+                <mxCell id="11" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Can we improve that with finer controls?&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" parent="1" vertex="1">
                     <mxGeometry x="960" y="880" width="600" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="How:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" vertex="1" parent="1">
+                <mxCell id="12" value="How:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" parent="1" vertex="1">
                     <mxGeometry x="40" y="1040" width="240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Through a fun interface to interact with the recommendation attributes&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" vertex="1" parent="1">
+                <mxCell id="13" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Through a fun interface to interact with the recommendation attributes&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" parent="1" vertex="1">
                     <mxGeometry x="320" y="1040" width="1240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="&amp;lt;visual of graphs splitting here&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;opacity=30;" vertex="1" parent="1">
+                <mxCell id="14" value="&amp;lt;visual similar to poster &amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;opacity=30;" parent="1" vertex="1">
                     <mxGeometry x="40" y="280" width="1520" height="400" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="A fun user experience" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" vertex="1" parent="1">
+                <mxCell id="15" value="Making algorithms fun" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" parent="1" vertex="1">
                     <mxGeometry x="1630" y="40" width="1520" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="Top level, abstract goals of what a fun experience will be.&lt;br&gt;i.e. &quot;play focused&quot;, &quot;user feedback&quot;, &quot;responsive&quot;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" vertex="1" parent="1">
-                    <mxGeometry x="1640" y="310" width="1520" height="490" as="geometry"/>
-                </mxCell>
-                <mxCell id="17" value="The interface, introduction" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" vertex="1" parent="1">
+                <mxCell id="17" value="The interface, introduction" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" parent="1" vertex="1">
                     <mxGeometry x="40" y="1240" width="1520" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="The interface, introduction" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" vertex="1" parent="1">
+                <mxCell id="18" value="The interface, introduction" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" parent="1" vertex="1">
                     <mxGeometry x="1640" y="1250" width="1520" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Goal:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" vertex="1" parent="1">
+                    <mxGeometry x="1640" y="280" width="240" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Users will have a fun interface to interact with the levers of Spotify's recommendation algorithm&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" vertex="1" parent="1">
+                    <mxGeometry x="1920" y="280" width="1240" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Project history" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" vertex="1" parent="1">
+                    <mxGeometry x="3240" y="40" width="1520" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Original goal:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" vertex="1" parent="1">
+                    <mxGeometry x="3240" y="280" width="240" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Originally got back playlists from the user and the idea was to allow users to see data visualizations per playlist.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" vertex="1" parent="1">
+                    <mxGeometry x="3520" y="280" width="1240" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="Research and discovery" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" vertex="1" parent="1">
+                    <mxGeometry x="3240" y="520" width="240" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Originally got back playlists from the user and the idea was to allow users to see data visualizations per playlist.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" vertex="1" parent="1">
+                    <mxGeometry x="3520" y="520" width="1240" height="200" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

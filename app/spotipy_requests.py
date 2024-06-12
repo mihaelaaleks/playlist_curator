@@ -11,6 +11,7 @@ def create_spotify(scope: str = "user-library-read user-top-read") -> spotipy.Sp
     return spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
 
+
 # TO DO
 def get_request_date():
     return

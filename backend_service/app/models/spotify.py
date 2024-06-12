@@ -20,6 +20,11 @@ class Playlist(BaseModel):
     image_url: str
 
 
+class PlaylistCreator(BaseModel):
+    name: str  # name of playlist
+    tracks: list[Track]
+
+
 # TODO: So for all the different attributes, they have slightly
 #   annoyingly different rules.
 #   yeah this will for sure be the most annoying thing to do

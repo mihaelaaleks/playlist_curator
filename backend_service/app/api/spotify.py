@@ -9,9 +9,9 @@ from ..models import curator
 from ..models.spotify import (
     Attribute,
     CurrateInput,
-    CurrateSeeder,
     Genre,
     Playlist,
+    PlaylistCreator,
     Track,
 )
 
@@ -25,16 +25,10 @@ REDIRECT_URI = os.environ.get("SPOTIPY_REDIRECT_URI")
 def create_spotify(
     scope: str = "user-library-read user-top-read playlist-modify-private playlist-read-private",
 ) -> Spotify:
-    return Spotify(retries=0, auth_manager=SpotifyOAuth(scope=scope))
-
-
-def retry_create_spotify(
-    scope: str = "user-library-read user-top-read playlist-modify-private playlist-read-private",
-) -> Spotify:
     return Spotify(
         auth_manager=SpotifyOAuth(scope=scope),
         # The default retry codes includes 429, maybe this causes the API endopint spam
-        default_retry_codes=(500, 502, 503, 504),
+        status_forcelist=(500, 502, 503, 504),
     )
 
 
@@ -46,8 +40,8 @@ router = APIRouter(
 
 N_TRACKS_DESIRED = 1
 N_LIMIT_RUNS = 2
-BUMP_TOLERANCE = 0.7
-DEFAULT_START_TOLERANCE = 0.3
+BUMP_TOLERANCE = 0.6
+DEFAULT_START_TOLERANCE = 0.25
 
 
 @router.get("/get_playlists/me")
@@ -184,3 +178,13 @@ async def get_attributes() -> list[Attribute]:
     # from the "/me" and then we get back their prefered default
     # settings or something.
     return RedirectResponse(url="/spotify/get_recommendation_attributes/all")
+
+
+@router.post("/create_playlist")
+async def create_playlist(creator: PlaylistCreator):
+    spotify = create_spotify()
+    user = spotify.current_user()
+    playlist_response = spotify.user_playlist_create(user=user["id"], name=creator.name)
+    playlist_id = playlist_response["id"]
+    tracks = [track.id for track in creator.tracks]
+    spotify.playlist_add_items(playlist_id, tracks)

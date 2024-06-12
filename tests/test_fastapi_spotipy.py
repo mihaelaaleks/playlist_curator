@@ -1,13 +1,8 @@
-import json
-from typing import Collection
-
 import pytest
-from fastapi.testclient import TestClient
 from httpx import AsyncClient, Response
-from spotipy import Spotify
 
 from backend_service.app.models import spotify as spotify_models
-from backend_service.main import app  # Assuming your FastAPI app is defined in main.py
+from backend_service.main import app
 
 
 @pytest.mark.asyncio

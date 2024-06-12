@@ -25,7 +25,11 @@ REDIRECT_URI = os.environ.get("SPOTIPY_REDIRECT_URI")
 def create_spotify(
     scope: str = "user-library-read user-top-read playlist-modify-private playlist-read-private",
 ) -> Spotify:
-    return Spotify(auth_manager=SpotifyOAuth(scope=scope))
+    return Spotify(
+        auth_manager=SpotifyOAuth(scope=scope),
+        # The default retry codes includes 429, maybe this causes the API endopint spam
+        status_forcelist=(500, 502, 503, 504),
+    )
 
 
 router = APIRouter(
@@ -36,8 +40,8 @@ router = APIRouter(
 
 N_TRACKS_DESIRED = 1
 N_LIMIT_RUNS = 2
-BUMP_TOLERANCE = 0.7
-DEFAULT_START_TOLERANCE = 0.3
+BUMP_TOLERANCE = 0.6
+DEFAULT_START_TOLERANCE = 0.25
 
 
 @router.get("/get_playlists/me")

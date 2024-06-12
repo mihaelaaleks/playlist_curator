@@ -51,12 +51,34 @@ async def test_post_curation(param: spotify_models.CurrateInput):
 
 @pytest.mark.asyncio
 async def test_integration():
-
+    fake_playlist_name = "My fakeplaylist used for testing"
     param = make_curate_params()[0]
     async with AsyncClient(app=app, base_url="http://test") as client:
         response = await client.get("/spotify/get_playlists/me")
         start_playlist_json = response.json()
         response = await client.post("/spotify/curate", json=param.model_dump())
+        track_json = response.json()
+        tracks = [spotify_models.Track(**track) for track in track_json]
+        playlist_creator = spotify_models.PlaylistCreator(
+            name=fake_playlist_name, tracks=tracks
+        )
+        response = await client.post(
+            "/spotify/create_playlist", json=playlist_creator.model_dump()
+        )
+        response = await client.get("/spotify/get_playlists/me")
+        end_playlist_json = response.json()
+        # Ensure a playlist was created
+        assert len(end_playlist_json) == len(start_playlist_json) + 1
+        delete_playlist_id = [
+            playlist["id"]
+            for playlist in end_playlist_json
+            if playlist["name"] == fake_playlist_name
+        ][0]
+        playlist = spotify_models.Playlist(id=delete_playlist_id)
+        response = await client.post("/spotify/delete", json=playlist.model_dump())
+        response = await client.get("/spotify/get_playlists/me")
+        after_delete_playlist_json = response.json()
+        assert len(after_delete_playlist_json) == len(start_playlist_json)
 
 
 def validate_return_type_collection(

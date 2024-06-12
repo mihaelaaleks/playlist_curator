@@ -29,6 +29,7 @@ def create_spotify(
         auth_manager=SpotifyOAuth(scope=scope),
         # The default retry codes includes 429, maybe this causes the API endopint spam
         status_forcelist=(500, 502, 503, 504),
+        retries=0,
     )
 
 

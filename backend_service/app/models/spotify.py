@@ -1,4 +1,5 @@
 from collections import ChainMap
+from typing import Optional
 
 from pydantic import BaseModel
 
@@ -16,8 +17,8 @@ class Track(BaseModel):
 
 class Playlist(BaseModel):
     id: str
-    name: str
-    image_url: str
+    name: Optional[str] = None
+    image_url: Optional[str] = None
 
 
 class PlaylistCreator(BaseModel):

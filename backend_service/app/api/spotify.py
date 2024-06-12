@@ -9,9 +9,9 @@ from ..models import curator
 from ..models.spotify import (
     Attribute,
     CurrateInput,
-    CurrateSeeder,
     Genre,
     Playlist,
+    PlaylistCreator,
     Track,
 )
 
@@ -172,7 +172,7 @@ async def get_attributes() -> list[Attribute]:
 
 @router.post("/create_playlist")
 async def create_playlist(creator: PlaylistCreator):
-    spotify = create_spotify_for_playlist_modification()
+    spotify = create_spotify()
     user = spotify.current_user()
     playlist_response = spotify.user_playlist_create(user=user["id"], name=creator.name)
     playlist_id = playlist_response["id"]

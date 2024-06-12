@@ -1,4 +1,5 @@
 from collections import ChainMap
+from typing import Optional
 
 from pydantic import BaseModel
 
@@ -16,8 +17,8 @@ class Track(BaseModel):
 
 class Playlist(BaseModel):
     id: str
-    name: str
-    image_url: str
+    name: Optional[str] = None
+    image_url: Optional[str] = None
 
 
 class PlaylistCreator(BaseModel):
@@ -78,6 +79,8 @@ class CurrateInput(BaseModel):
 
     def get_attribute_kwargs(self, tolerance: float = 0.1) -> dict:
         # Return a list of dictionaries of all the items.
+        if self.attributes is None:
+            return {}
         kwarg_list = [
             attribute.as_recommendation_kwargs(tolerance)
             for attribute in self.attributes

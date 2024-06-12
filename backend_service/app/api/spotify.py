@@ -29,6 +29,7 @@ def create_spotify(
         auth_manager=SpotifyOAuth(scope=scope),
         # The default retry codes includes 429, maybe this causes the API endopint spam
         status_forcelist=(500, 502, 503, 504),
+        retries=0,
     )
 
 
@@ -63,6 +64,12 @@ async def get_playlists() -> list[Playlist]:
         Playlist(id=item["id"], name=item["name"], image_url=item["images"][0]["url"])
         for item in playlists_response["items"]
     ]
+
+
+@router.post("/delete")
+async def delete_playlist(playlist: Playlist):
+    spotify = create_spotify()
+    spotify.current_user_unfollow_playlist(playlist_id=playlist.id)
 
 
 @router.post("/curate")

@@ -18,7 +18,11 @@ export default {
             selectedDropdownOption: '',
             selectedSliderValue: 0,
             sliders: [],
-            recommendationTracksResponse: []
+            recommendationTracksResponse: [],
+            playlistData: {
+                name: 'CuratedPlaylist',
+                tracks: []
+            }
         };
     },
     async created() {
@@ -42,6 +46,9 @@ export default {
         updateSliderValue(index, value) {
             this.sliders[index].value = value;
         },
+        handleActualItemsUpdate(newActualItems) {
+            this.playlistData.tracks = newActualItems;
+        },
         async submitGetRecommendationFormData() {
             try {
                 const requestData = {
@@ -62,6 +69,14 @@ export default {
                 this.recommendationTracksResponse = response.data;
             } catch (error) {
                 console.error('Error submitting form data:', error);
+            }
+        },
+        async submitCreatePlaylistFormData() {
+            try {
+                const response = await axios.post('http://localhost:8000/spotify/create_playlist', this.playlistData);
+                console.log('Form submitted successfully!', response.data)
+            } catch (error) {
+                console.error('Error submitting form data:', error.response.data);
             }
         }
     },
@@ -96,9 +111,11 @@ export default {
         </div>
         <div class="R-child-grid">
             <div class="title" id="curator-title">Recommendations</div>
-            <TracklistCurator class="curator-component" :items="this.recommendationTracksResponse"/>
+            <TracklistCurator class="curator-component" 
+            :items="this.recommendationTracksResponse"
+            @update:actualItems="handleActualItemsUpdate"/>
             <div class="container-recommend">
-                <button>Create Playlist</button>
+                <button @click="submitCreatePlaylistFormData">Create Playlist</button>
             </div>
         </div>
     </div>

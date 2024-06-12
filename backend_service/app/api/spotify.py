@@ -23,7 +23,7 @@ REDIRECT_URI = os.environ.get("SPOTIPY_REDIRECT_URI")
 
 
 def create_spotify(
-    scope: str = "user-library-read user-top-read playlist-modify-private playlist-read-private",
+    scope: str = "user-library-read user-top-read playlist-modify-private playlist-modify-public",
 ) -> Spotify:
     return Spotify(
         auth_manager=SpotifyOAuth(scope=scope),

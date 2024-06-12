@@ -30,22 +30,22 @@ class Playlist(BaseModel):
 class Attribute(BaseModel):
     name: str
     target: float
-    tolerance: float
 
-    def as_recommendation_kwargs(self) -> dict:
+    def as_recommendation_kwargs(self, tolerance: float = 0.1) -> dict:
         # TODO: These checks have to happen per type of attribute unfortunately.
         # Target is the value between 0 and 1 to
         # use for the named attribute.
+        if 1 <= self.target <= 100:
+            self.target = self.target / 100
         assert 0 <= self.target <= 1
-        # Tolerance is a percentage to apply on target
-        assert 0 <= self.tolerance <= 1
-        # Get percentage difference down
-        min_value = self.target * (1 - self.tolerance)
+
+        # Min will be target minus standard amount
+        min_value = self.target - tolerance
         # If the calculated min is less than zero, set to zero
         min_value = max(0, min_value)
 
-        # Get percentage difference up
-        max_value = self.target * (1 + self.tolerance)
+        # Min will be target minus standard amount
+        max_value = self.target + tolerance
         # If the calculated max is more than 1, set to 1
         max_value = min(1, max_value)
         return {
@@ -64,19 +64,20 @@ class CurrateInput(BaseModel):
     seed: CurrateSeeder
     attributes: list[Attribute] | None = None
 
-    def as_recommendation_kwargs(self) -> dict:
+    def as_recommendation_kwargs(self, attribute_tolerance: float = 0.1) -> dict:
         seed_name = "seed_" + self.seed.id
         seed_kwargs = {seed_name: self.seed.values}
-        attribute_kwarg = self.get_attribute_kwargs()
+        attribute_kwarg = self.get_attribute_kwargs(attribute_tolerance)
         # The | can be used to join dictionaries
         return seed_kwargs | attribute_kwarg
 
-    def get_attribute_kwargs(self) -> dict:
+    def get_attribute_kwargs(self, tolerance: float = 0.1) -> dict:
         # Return a list of dictionaries of all the items.
         if self.attributes is None:
             return {}
         kwarg_list = [
-            attribute.as_recommendation_kwargs() for attribute in self.attributes
+            attribute.as_recommendation_kwargs(tolerance)
+            for attribute in self.attributes
         ]
         # Combine them into one large dictionary
         return dict(ChainMap(*kwarg_list))

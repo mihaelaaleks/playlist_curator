@@ -11,7 +11,6 @@ ALL_RECOMMENDATION_ATTRIBUTES = [
     "liveness",
     "loudness",
     "mode",
-    "popularity",
     "speechiness",
     "tempo",
     "time_signature",
@@ -24,7 +23,7 @@ NUMERIC_RANGE_ATTRIBUTES = [
     "energy",
     "instrumentalness",
     "liveness",
-    "popularity",
+    # "popularity", # NOTE, failure happens due to needing an int between 0 and 100, not a float.
     "speechiness",
 ]
 

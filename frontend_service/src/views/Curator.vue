@@ -9,6 +9,7 @@ export default {
     components: {
         DropDown,
         Slider,
+        // TrackList
     },
     data() {
         return {
@@ -16,7 +17,7 @@ export default {
             selectedDropdownOption: '',
             selectedSliderValue: 0,
             sliders: [],
-            responseItems: []
+            recommendationTracksResponse: []
         };
     },
     async created() {
@@ -31,7 +32,7 @@ export default {
                 label,
                 value: 0
             }));
-            this.dropdownOptions = dropdownOptionsResponse.data;
+            this.dropdownOptions = dropdownOptionsResponse.data.map(genre => genre.name);
         } catch (error) {
             console.error('Error fetching form data:', error);
         }
@@ -40,7 +41,7 @@ export default {
         updateSliderValue(index, value) {
             this.sliders[index].value = value;
         },
-        async submitFormData() {
+        async submitGetRecommendationFormData() {
             try {
                 const requestData = {
                     seed: {
@@ -56,9 +57,9 @@ export default {
                 };
 
                 const response = await axios.post('http://localhost:8000/spotify/curate', requestData);
-                
-                // Populate the responseItems array based on the API response
-                this.responseItems = response.data.items;
+
+                // Populate the recommendationTracksResponse array based on the API response
+                this.recommendationTracksResponse = response.data;
             } catch (error) {
                 console.error('Error submitting form data:', error);
             }
@@ -71,8 +72,8 @@ export default {
         <div class="L-child-grid">
             <div class="container-seeder">
                 <div class="title" id="seeder-container-title">Seeder</div>
-                <div class="container-vertical-items"> 
-                    <button>Playlist Seed</button> 
+                <div class="container-vertical-items">
+                    <button>Playlist Seed</button>
                 </div>
                 <div class="container-settings">
                     <DropDown :options="dropdownOptions" label="Select an option" v-model="selectedDropdownOption" />
@@ -89,14 +90,14 @@ export default {
                 </div>
             </div>
             <div class="container-curate">
-                <button @click="submitFormData">Get Recommendations</button>
+                <button @click="submitGetRecommendationFormData">Get Recommendations</button>
             </div>
 
         </div>
         <div class="R-child-grid">
             <div class="title">Recommendations</div>
             <ul>
-                <li v-for="(item, index) in responseItems" :key="index">{{ item }}</li>
+                <li v-for="track in this.recommendationTracksResponse" :key="track.id">{{ track.name }}</li>
             </ul>
         </div>
     </div>
@@ -104,7 +105,6 @@ export default {
 
 
 <style scoped>
-
 button {
     width: -moz-available;
 }
@@ -145,10 +145,10 @@ button {
 .container-settings {
     grid-area: 2 / 2 / 3 / 3;
     align-content: center;
-    height:fit-content;
+    height: fit-content;
     padding: 4px;
     border-radius: 4px;
-    height:fit-content;
+    height: fit-content;
 }
 
 .container-vertical-items {
@@ -177,8 +177,4 @@ button {
     color: rgba(235, 235, 235, 0.64);
     opacity: 50%;
 }
-
-
-
-
 </style>

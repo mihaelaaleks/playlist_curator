@@ -1,6 +1,7 @@
 <script>
 import DropDown from '../components/DropDown.vue';
 import Slider from '../components/Slider.vue';
+import TracklistCurator from '../components/TracklistCurator.vue'
 import { ref } from 'vue';
 import axios from 'axios';
 
@@ -9,7 +10,7 @@ export default {
     components: {
         DropDown,
         Slider,
-        // TrackList
+        TracklistCurator
     },
     data() {
         return {
@@ -46,8 +47,7 @@ export default {
                 const requestData = {
                     seed: {
                         id: "genres",
-                        // values: [this.selectedDropdownOption]
-                        values: ["blues", "jazz"]
+                        values: [this.selectedDropdownOption]
                     },
                     attributes: this.sliders.map(slider => ({
                         name: slider.label,
@@ -89,16 +89,17 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="container-curate">
+            <div class="container-recommend">
                 <button @click="submitGetRecommendationFormData">Get Recommendations</button>
             </div>
 
         </div>
         <div class="R-child-grid">
-            <div class="title">Recommendations</div>
-            <ul>
-                <li v-for="track in this.recommendationTracksResponse" :key="track.id">{{ track.name }}</li>
-            </ul>
+            <div class="title" id="curator-title">Recommendations</div>
+            <TracklistCurator class="curator-component" :items="this.recommendationTracksResponse"/>
+            <div class="container-recommend">
+                <button>Create Playlist</button>
+            </div>
         </div>
     </div>
 </template>
@@ -109,11 +110,22 @@ button {
     width: -moz-available;
 }
 
+#curator-title {
+     grid-area: 1 / 1 / 2 / 2;
+}
+
+.curator-component {
+    background: black;
+    width: 677px;
+    height: 600px;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
 .parent-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 1px;
+    grid-column-gap: 20px;
     grid-row-gap: 1px;
     background-color: #181818;
 }
@@ -121,9 +133,28 @@ button {
 .L-child-grid {
     grid-area: 1 / 1 / 3 / 3;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto-fit, 1fr;
+    grid-template-rows: auto-fit;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
+    padding: 0% 5% !important;
+}
+
+.R-child-grid {
+    grid-area: 1 / 3 / 3 / 4;
+    border: 2px;
+    align-content: center;
+    padding: 0% 1% !important;
+    width:max-content;
+    align-self: start;
+    position: inherit;
+
+    display:grid;
+    grid-template-rows: auto-fit;
+    grid-template-columns: auto-fit, 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+
 }
 
 .container-seeder {
@@ -160,16 +191,10 @@ button {
     background-color: #181818;
 }
 
-.container-curate {
+.container-recommend {
     grid-area: 5 / 1 / 6 / 4;
     align-content: center;
 }
-
-.R-child-grid {
-    grid-area: 1 / 3 / 3 / 4;
-    border: 2;
-}
-
 
 .title {
     grid-area: 1 / 1 / 2 / 3;

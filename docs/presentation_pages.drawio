@@ -1,65 +1,659 @@
 <mxfile host="65bd71144e">
     <diagram id="_6eTLL0yAIovUGPhj1NL" name="Page-1">
-        <mxGraphModel dx="2424" dy="1372" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+        <mxGraphModel dx="3110" dy="2165" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="Playlist curator" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="40" width="1520" height="200" as="geometry"/>
+                <mxCell id="210" value="" style="group;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="200" y="1560" width="1370" height="674.6399999999999" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Goal:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" parent="1" vertex="1">
+                <mxCell id="274" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;opacity=30;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="-150" y="-14.63000000000011" width="1520" height="689.27" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;Attributes&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="647.184750733138" y="317.7793296089385" width="374.1935483870968" height="144.83240223463685" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="647.184750733138" y="343.3379888268156" width="374.1935483870968" height="119.27374301675975" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="331.6715542521994" y="414.0502793296089" width="263.6363636363637" height="195.949720670391" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="461.7888563049854" y="17.891061452513963" width="416.71554252199417" height="247.0670391061452" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="538.3284457478005" y="51.96927374301675" width="161.58357771260998" height="76.67597765363128" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="461.7888563049854" y="17.891061452513963" width="416.71554252199417" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="Curator" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="470.29325513196477" y="22.150837988826815" width="68.03519061583577" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="Stats" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="733.9296187683286" y="22.150837988826815" width="68.03519061583577" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="Seeder" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="470.29325513196477" y="51.96927374301675" width="68.03519061583577" height="76.67597765363128" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="From Scratch" style="rounded=0;whiteSpace=wrap;html=1;fontSize=7;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="478.79765395894424" y="77.52793296089385" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="From Playlist" style="rounded=0;whiteSpace=wrap;html=1;fontSize=7;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="478.79765395894424" y="103.08659217877094" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="Seed type info appears here.&lt;br style=&quot;font-size: 10px;&quot;&gt;i.e. &quot;Seed from genre&quot;&lt;br style=&quot;font-size: 10px;&quot;&gt;or the playlist shelf if from playlist" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;fontSize=10;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="546.8328445747799" y="60.488826815642454" width="144.57478005865102" height="59.636871508379876" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="Recommendation attributes component" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=middle;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="470.29325513196477" y="137.16480446927372" width="229.61876832844575" height="76.67597765363128" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="Curate (button to populate rec)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=middle;glass=1;shadow=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontFamily=Lucida Console;arcSize=50;opacity=50;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="470.29325513196477" y="224.06424581005584" width="229.61876832844575" height="32.37430167597765" as="geometry"/>
+                </mxCell>
+                <mxCell id="122" value="" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="212.6099706744868" y="414.0502793296089" width="119.06158357771258" height="195.949720670391" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="&quot;From scratch&quot;&lt;br style=&quot;font-size: 8px;&quot;&gt;- Philosophically, there's some interesting considerations of what can be done for the &quot;from scratch&quot;&lt;br style=&quot;font-size: 8px;&quot;&gt;&lt;span style=&quot;white-space: pre; font-size: 8px;&quot;&gt;&#9;&lt;/span&gt;- in that, it can provide a &quot;search box&quot; into spotify to allow searching for &quot;artist/ track/ etc...&quot;&amp;nbsp;&lt;br style=&quot;font-size: 8px;&quot;&gt;&lt;br style=&quot;font-size: 8px;&quot;&gt;- Provide users boxes where they can input the seeds.&lt;br style=&quot;font-size: 8px;&quot;&gt;&lt;span style=&quot;white-space: pre; font-size: 8px;&quot;&gt;&#9;&lt;/span&gt;- For now, it's a multi-select dropbox&lt;br style=&quot;font-size: 8px;&quot;&gt;&lt;span style=&quot;white-space: pre; font-size: 8px;&quot;&gt;&#9;&lt;/span&gt;Goal:" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=top;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;fontFamily=Lucida Console;fontSize=8;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="289.14956011730203" y="292.2206703910614" width="289.14956011730203" height="119.27374301675975" as="geometry"/>
+                </mxCell>
+                <mxCell id="124" value="Dropdown of genres" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="221.1143695014663" y="448.1284916201117" width="102.05278592375367" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="125" value="genre a" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;textOpacity=40;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="221.1143695014663" y="473.6871508379888" width="102.05278592375367" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" value="genre b" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;textOpacity=40;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="221.1143695014663" y="499.2458100558659" width="102.05278592375367" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="127" value="genre a" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;textOpacity=40;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="348.68035190615836" y="465.16759776536304" width="102.05278592375367" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="128" value="genre c" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;textOpacity=40;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="467.741935483871" y="465.16759776536304" width="102.05278592375367" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="Spotify search" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="221.1143695014663" y="533.3240223463687" width="102.05278592375367" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" value="Result space" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="221.1143695014663" y="558.8826815642457" width="102.05278592375367" height="42.59776536312849" as="geometry"/>
+                </mxCell>
+                <mxCell id="131" value="Curator recipe space" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="344.42815249266863" y="422.56983240223457" width="233.8709677419355" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="132" value="Chosen artist a" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;textOpacity=40;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="348.68035190615836" y="507.7653631284916" width="102.05278592375367" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" value="Playlist Carousel" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry y="205.3212290502793" width="260.23460410557186" height="108.19832402234634" as="geometry"/>
+                </mxCell>
+                <mxCell id="134" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="8.504398826979472" y="230.87988826815644" width="51.02639296187684" height="51.117318435754186" as="geometry"/>
+                </mxCell>
+                <mxCell id="135" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="68.03519061583577" y="230.87988826815644" width="51.02639296187684" height="51.117318435754186" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="127.5659824046921" y="230.87988826815644" width="51.02639296187684" height="51.117318435754186" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="187.0967741935484" y="230.87988826815644" width="51.02639296187684" height="51.117318435754186" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="From link:&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry y="313.5195530726256" width="260.23460410557186" height="42.59776536312849" as="geometry"/>
+                </mxCell>
+                <mxCell id="139" value="&quot;Paste spotify playlist link&quot;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="59.53079178885629" y="322.0391061452513" width="183.69501466275665" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="140" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="210" source="142" target="123">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="142" value="Seed type info views" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="296.80351906158364" y="200.20949720670387" width="144.57478005865102" height="59.636871508379876" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" style="edgeStyle=none;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=1;fontFamily=Lucida Console;fontSize=10;endArrow=none;endFill=0;dashed=1;dashPattern=1 4;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="210" source="116" target="142">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="455.83577712609974" y="70.7122905027933"/>
+                            <mxPoint x="455.83577712609974" y="121.82960893854744"/>
+                            <mxPoint x="370.79178885630506" y="121.82960893854744"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="143" value="&quot;From playlist&quot;" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=top;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry y="162.72346368715083" width="260.23460410557186" height="34.07821229050278" as="geometry"/>
+                </mxCell>
+                <mxCell id="141" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="210" source="142" target="143">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="144" value="Generated rec from curated" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontSize=11;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="708.41642228739" y="51.96927374301675" width="76.53958944281526" height="204.46927374301674" as="geometry"/>
+                </mxCell>
+                <mxCell id="145" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="716.9208211143696" y="86.04748603351955" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="146" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="716.9208211143696" y="111.60614525139661" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="147" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="716.9208211143696" y="137.16480446927372" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="148" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="776.4516129032259" y="86.04748603351955" width="8.504398826979472" height="170.39106145251395" as="geometry"/>
+                </mxCell>
+                <mxCell id="149" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="776.4516129032259" y="86.04748603351955" width="8.504398826979472" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="150" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="716.9208211143696" y="162.72346368715083" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="151" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="716.9208211143696" y="188.2821229050279" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="152" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="716.9208211143696" y="213.84078212290498" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="153" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="721.1730205278593" y="90.3072625698324" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="154" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="721.1730205278593" y="115.86592178770948" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="155" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="721.1730205278593" y="141.4245810055866" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="156" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="755.1906158357772" y="90.3072625698324" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="157" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="755.1906158357772" y="115.86592178770948" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="158" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="755.1906158357772" y="141.4245810055866" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="159" value="New playlist" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontSize=11;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="789.208211143695" y="51.96927374301675" width="76.53958944281526" height="204.46927374301674" as="geometry"/>
+                </mxCell>
+                <mxCell id="160" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="797.7126099706745" y="86.04748603351955" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="161" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="797.7126099706745" y="111.60614525139661" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="162" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="797.7126099706745" y="137.16480446927372" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="163" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="857.2434017595308" y="86.04748603351955" width="8.504398826979472" height="144.83240223463685" as="geometry"/>
+                </mxCell>
+                <mxCell id="164" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="857.2434017595308" y="86.04748603351955" width="8.504398826979472" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="165" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="797.7126099706745" y="162.72346368715083" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="166" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="797.7126099706745" y="188.2821229050279" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="167" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="801.9648093841643" y="90.3072625698324" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="168" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="801.9648093841643" y="115.86592178770948" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="169" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="801.9648093841643" y="141.4245810055866" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="835.982404692082" y="90.3072625698324" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="171" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="835.982404692082" y="115.86592178770948" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="172" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="835.982404692082" y="141.4245810055866" width="8.504398826979472" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="173" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="797.7126099706745" y="213.84078212290498" width="51.02639296187684" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="174" value="" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontSize=11;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="789.208211143695" y="226.62011173184356" width="76.53958944281526" height="29.818435754189938" as="geometry"/>
+                </mxCell>
+                <mxCell id="175" value="Name {text}" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=9;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="793.4604105571848" y="230.87988826815644" width="68.03519061583577" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="176" value="Create" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=9;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="793.4604105571848" y="243.65921787709487" width="68.03519061583577" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="177" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="210" source="178" target="112">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="178" value="The &quot;/Curator&quot; page&lt;br style=&quot;font-size: 8px;&quot;&gt;- By default:&lt;br style=&quot;font-size: 8px;&quot;&gt;&lt;span style=&quot;white-space: pre; font-size: 8px;&quot;&gt;&#9;&lt;/span&gt;- &quot;From playlist&quot; seeder is selected and &quot;seed type&quot; component is populated from playlist." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;align=left;fontFamily=Lucida Console;fontSize=8;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="212.6099706744868" width="231.3196480938417" height="117.56983240223462" as="geometry"/>
+                </mxCell>
+                <mxCell id="179" style="edgeStyle=none;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=1 4;strokeWidth=1;fontFamily=Lucida Console;fontSize=10;endArrow=none;endFill=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="210" source="180" target="120">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="705.0146627565983" y="181.46648044692733"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="180" value="Recommendation attributes component" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=middle;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="647.184750733138" y="286.2569832402234" width="229.61876832844575" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="182" value="Settings" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="806.217008797654" y="22.150837988826815" width="68.03519061583577" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="184" value="Would be nice to have a &quot;dropdown&quot; toggle and this setting display the spotify user profile." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=10;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="914.2228739002936" y="19.5949720670391" width="147.97653958944284" height="68.15642458100557" as="geometry"/>
+                </mxCell>
+                <mxCell id="181" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.007;entryY=0.571;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=9;endArrow=none;endFill=0;dashed=1;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="210" source="182" target="184">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="185" value="&lt;font&gt;Things that would be in these settings:&lt;br&gt;- Ability to control and name attributes&amp;nbsp;&lt;br&gt;- Ability to set:&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;- &quot;Update attributes from chosen playlist&quot;&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=10;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="906.5689149560119" y="115.86592178770948" width="253.4310850439883" height="65.60055865921785" as="geometry"/>
+                </mxCell>
+                <mxCell id="183" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;fontFamily=Lucida Console;fontSize=10;endArrow=none;endFill=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="210" source="184" target="185">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1074.1055718475072" y="22.998533519552975" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="186" value="&amp;lt;Attribute&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="664.1935483870968" y="385.9357541899441" width="331.6715542521994" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="187" value="&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22val%22%20style%3D%22rounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3Bhorizontal%3D1%3Balign%3Dleft%3BverticalAlign%3Dmiddle%3BfontFamily%3DLucida%20Console%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%221605%22%20y%3D%22784.5%22%20width%3D%2240%22%20height%3D%2221%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="740.7331378299122" y="394.45530726256976" width="204.10557184750735" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="188" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontFamily=Lucida Console;fontSize=10;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="817.2727272727273" y="394.45530726256976" width="59.53079178885629" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="189" value="Tolerance" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="672.6979472140764" y="360.37709497206697" width="204.10557184750735" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="190" value="20%" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="885.3079178885632" y="360.37709497206697" width="110.55718475073316" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="191" value="" style="endArrow=none;html=1;fontFamily=Lucida Console;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;strokeWidth=5;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="210" source="188" target="188">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="813.4457478005866" y="370.6005586592178" as="sourcePoint"/>
+                        <mxPoint x="855.967741935484" y="328.00279329608935" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="192" value="Val" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="953.3431085043989" y="394.45530726256976" width="34.01759530791789" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="193" value="&amp;lt;Attribute&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="664.1935483870968" y="420.01396648044687" width="331.6715542521994" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="194" value="&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22val%22%20style%3D%22rounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3Bhorizontal%3D1%3Balign%3Dleft%3BverticalAlign%3Dmiddle%3BfontFamily%3DLucida%20Console%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%221605%22%20y%3D%22784.5%22%20width%3D%2240%22%20height%3D%2221%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="740.7331378299122" y="428.5335195530726" width="204.10557184750735" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="195" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontFamily=Lucida Console;fontSize=10;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="817.2727272727273" y="428.5335195530726" width="59.53079178885629" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="196" value="" style="endArrow=none;html=1;fontFamily=Lucida Console;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;strokeWidth=5;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="210" source="195" target="195">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="813.4457478005866" y="404.67877094972056" as="sourcePoint"/>
+                        <mxPoint x="855.967741935484" y="362.0810055865921" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="197" value="Val" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="953.3431085043989" y="428.5335195530726" width="34.01759530791789" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="198" value="&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22val%22%20style%3D%22rounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3Bhorizontal%3D1%3Balign%3Dleft%3BverticalAlign%3Dmiddle%3BfontFamily%3DLucida%20Console%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%221605%22%20y%3D%22784.5%22%20width%3D%2240%22%20height%3D%2221%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry y="295.6284916201117" width="260.23460410557186" height="17.891061452513963" as="geometry"/>
+                </mxCell>
+                <mxCell id="199" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontFamily=Lucida Console;fontSize=10;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="217.71260997067452" y="295.6284916201117" width="42.521994134897355" height="17.891061452513963" as="geometry"/>
+                </mxCell>
+                <mxCell id="200" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;Custom white and blacklist&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="647.184750733138" y="462.6117318435753" width="374.1935483870968" height="110.75418994413407" as="geometry"/>
+                </mxCell>
+                <mxCell id="201" value="Goal of eventual nice to have, would be to include a way to add &quot;whitelist&quot; and &quot;blacklist&quot; from spotify search" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=top;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontFamily=Lucida Console;fontSize=8;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="630.175953079179" y="577.6256983240222" width="399.70674486803523" height="32.37430167597765" as="geometry"/>
+                </mxCell>
+                <mxCell id="202" value="Spotify search" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="664.1935483870968" y="490.7262569832402" width="102.05278592375367" height="25.558659217877093" as="geometry"/>
+                </mxCell>
+                <mxCell id="203" value="" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;rotation=90;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="953.3431085043989" y="394.45530726256976" width="119.06158357771258" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="204" value="" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=left;verticalAlign=middle;fontFamily=Lucida Console;rotation=90;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="1000.1173020527862" y="377.4162011173184" width="25.51319648093842" height="17.03910614525139" as="geometry"/>
+                </mxCell>
+                <mxCell id="205" value="White space&amp;nbsp;&lt;br&gt;(always include as part of recommend)" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="783.2551319648094" y="490.7262569832402" width="102.05278592375367" height="76.67597765363128" as="geometry"/>
+                </mxCell>
+                <mxCell id="206" value="Remove from any recommended output" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="906.5689149560119" y="490.7262569832402" width="102.05278592375367" height="76.67597765363128" as="geometry"/>
+                </mxCell>
+                <mxCell id="207" value="Result space" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="664.1935483870968" y="516.2849162011172" width="102.05278592375367" height="51.117318435754186" as="geometry"/>
+                </mxCell>
+                <mxCell id="208" value="Add all" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=9;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="210">
+                    <mxGeometry x="712.6686217008798" y="243.65921787709487" width="59.53079178885629" height="8.519553072625696" as="geometry"/>
+                </mxCell>
+                <mxCell id="209" value="" style="endArrow=none;html=1;strokeWidth=1;fontFamily=Lucida Console;fontSize=10;entryX=-0.018;entryY=0.901;entryDx=0;entryDy=0;entryPerimeter=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="210" target="148">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="708.41642228739" y="239.058659217877" as="sourcePoint"/>
+                        <mxPoint x="772.1994134897361" y="239.058659217877" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="216" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1640" y="1560" width="1520" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3250" y="250" width="1508" height="410" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="Change of plans" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="2260" y="530" width="300" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Project history" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1640" y="40" width="1520" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;font style=&quot;font-size: 28px;&quot;&gt;Original&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;verticalAlign=bottom;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1680" y="200" width="300" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;align=center;verticalAlign=middle;spacing=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1640" y="240" width="1520" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1640" y="570" width="1520" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="New goals" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="2810" y="860" width="300" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;align=center;verticalAlign=middle;spacing=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1640" y="900" width="1520" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Playlist curator" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="1520" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Goal:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
                     <mxGeometry x="40" y="720" width="240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;To give users control of their own recommendations.&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" parent="1" vertex="1">
+                <mxCell id="4" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;To give users control of their own recommendations.&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
                     <mxGeometry x="320" y="720" width="1240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="Why:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" parent="1" vertex="1">
+                <mxCell id="9" value="Why:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
                     <mxGeometry x="40" y="880" width="240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Spotify provides good recommendations.&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" parent="1" vertex="1">
+                <mxCell id="10" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Spotify provides good recommendations.&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
                     <mxGeometry x="320" y="880" width="600" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Can we improve that with finer controls?&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" parent="1" vertex="1">
+                <mxCell id="11" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Can we improve that with finer controls?&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
                     <mxGeometry x="960" y="880" width="600" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="How:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" parent="1" vertex="1">
+                <mxCell id="12" value="How:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
                     <mxGeometry x="40" y="1040" width="240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Through a fun interface to interact with the recommendation attributes&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" parent="1" vertex="1">
+                <mxCell id="13" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Through a fun interface to interact with the recommendation attributes&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
                     <mxGeometry x="320" y="1040" width="1240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="&amp;lt;visual similar to poster &amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;opacity=30;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="280" width="1520" height="400" as="geometry"/>
+                <mxCell id="17" value="Demo" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1640" y="1240" width="1520" height="280" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="Making algorithms fun" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" parent="1" vertex="1">
-                    <mxGeometry x="1630" y="40" width="1520" height="200" as="geometry"/>
+                <mxCell id="18" value="An improved design vision" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="1240" width="1520" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="The interface, introduction" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="1240" width="1520" height="200" as="geometry"/>
+                <mxCell id="19" value="&lt;font style=&quot;font-size: 42px;&quot;&gt;Goal:&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=42;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1720" y="290" width="230" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="The interface, introduction" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" parent="1" vertex="1">
-                    <mxGeometry x="1640" y="1250" width="1520" height="200" as="geometry"/>
+                <mxCell id="20" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;Keeping things fun&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="3280" y="200" width="670" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="Goal:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" vertex="1" parent="1">
-                    <mxGeometry x="1640" y="280" width="240" height="200" as="geometry"/>
+                <mxCell id="21" value="How to design for play" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="3240" y="40" width="1520" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Users will have a fun interface to interact with the levers of Spotify's recommendation algorithm&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" vertex="1" parent="1">
-                    <mxGeometry x="1920" y="280" width="1240" height="200" as="geometry"/>
+                <mxCell id="25" value="Research" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1720" y="600" width="240" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="Project history" style="rounded=1;whiteSpace=wrap;html=1;fontSize=96;" vertex="1" parent="1">
-                    <mxGeometry x="3240" y="40" width="1520" height="200" as="geometry"/>
+                <mxCell id="32" value="&lt;span style=&quot;font-size: 42px;&quot;&gt;To visualize data describing my spotify playlists&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=42;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="2000" y="300" width="1090" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="Original goal:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" vertex="1" parent="1">
-                    <mxGeometry x="3240" y="280" width="240" height="200" as="geometry"/>
+                <mxCell id="34" value="Users indicate more interest in creating own playlists" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;align=center;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1680" y="640" width="720" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Originally got back playlists from the user and the idea was to allow users to see data visualizations per playlist.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" vertex="1" parent="1">
-                    <mxGeometry x="3520" y="280" width="1240" height="200" as="geometry"/>
+                <mxCell id="36" value="Discovery" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="2440" y="600" width="240" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" value="Research and discovery" style="rounded=1;whiteSpace=wrap;html=1;fontSize=48;" vertex="1" parent="1">
-                    <mxGeometry x="3240" y="520" width="240" height="200" as="geometry"/>
+                <mxCell id="35" value="Knowledge and experience with spotify's developer API" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;align=center;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="2420" y="640" width="720" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Originally got back playlists from the user and the idea was to allow users to see data visualizations per playlist.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;" vertex="1" parent="1">
-                    <mxGeometry x="3520" y="520" width="1240" height="200" as="geometry"/>
+                <mxCell id="37" value="&lt;font style=&quot;font-size: 42px;&quot;&gt;Goal:&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=42;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1720" y="960" width="230" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="&lt;span style=&quot;font-size: 42px;&quot;&gt;To enable users to curate spotify's recommendation in their own personalized direction&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=42;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="2000" y="960" width="1090" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;Keeping things doable&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="4030" y="700" width="670" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3245" y="750" width="1510" height="410" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Interactivity&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3300" y="370" width="400" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Exploration&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3800" y="530" width="400" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Personalization&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3300" y="530" width="400" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Visual appeal&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="4300" y="530" width="400" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Feedback&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3800" y="370" width="400" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Social integration&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="4300" y="370" width="400" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Considerations of ideas that could be included, eventually&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;strokeColor=none;fillColor=none;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3300" y="250" width="1420" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Developing initial ideas to enable a functioning MVP to demo&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;strokeColor=none;fillColor=none;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3290" y="760" width="1420" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Interactivity&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3280" y="850" width="400" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Feedback&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=72;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3280" y="950" width="400" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="&lt;p style=&quot;line-height: 60%;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;Exploration&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3280" y="1050" width="400" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="&lt;p style=&quot;line-height: 60%; font-size: 28px;&quot;&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;Users can dynamically build up a playlist across many recommendations&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3680" y="850" width="1040" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="&lt;p style=&quot;line-height: 60%; font-size: 28px;&quot;&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;Users can run recommendations and see how the algorithm behaves&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3680" y="950" width="1040" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="&lt;p style=&quot;line-height: 60%; font-size: 28px;&quot;&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;Users can listen to recommended songs with a spotify embed&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="3680" y="1050" width="1040" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="I set a self goal to produce a detailed design view of what I wanted the project to do.&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=36;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1430" width="1520" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="211" value="The demo will show the design progress and the functionality of the three goals." style="rounded=1;whiteSpace=wrap;html=1;fontSize=36;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="2260" width="1520" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="212" value="Functioning goals:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=42;fillColor=none;strokeColor=none;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1650" y="1630" width="404.44" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="213" value="&lt;p style=&quot;line-height: 60%; font-size: 28px;&quot;&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;Users can dynamically build up a playlist across many recommendations&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="2070" y="1580" width="1040" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="214" value="&lt;p style=&quot;line-height: 60%; font-size: 28px;&quot;&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;Users can run recommendations and see how the algorithm behaves&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="2070" y="1660" width="1040" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="215" value="&lt;p style=&quot;line-height: 60%; font-size: 28px;&quot;&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;Users can listen to recommended songs with a spotify embed&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="2070" y="1740" width="1040" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="217" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1630" y="1880" width="1520" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="218" value="Visual goals:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=42;fillColor=none;strokeColor=none;align=left;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1670" y="1950" width="730" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="222" value="To have a layout &lt;br&gt;feel matching the design" style="rounded=1;whiteSpace=wrap;html=1;fontSize=42;fillColor=none;strokeColor=none;align=left;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1730" y="2040" width="520" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="270" value="" style="group;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="2450" y="1940" width="560" height="331.43" as="geometry"/>
+                </mxCell>
+                <mxCell id="223" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry width="560" height="331.43" as="geometry"/>
+                </mxCell>
+                <mxCell id="224" value="" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="102.85714285714286" y="45.71448275862069" width="217.14285714285717" height="102.85758620689654" as="geometry"/>
+                </mxCell>
+                <mxCell id="225" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry width="560" height="34.285862068965514" as="geometry"/>
+                </mxCell>
+                <mxCell id="226" value="Curator" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="11.428571428571429" y="5.714310344827586" width="91.42857142857143" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="227" value="Stats" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="365.7142857142857" y="5.714310344827586" width="91.42857142857143" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="228" value="Seeder" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="11.428571428571429" y="45.71448275862069" width="91.42857142857143" height="102.85758620689654" as="geometry"/>
+                </mxCell>
+                <mxCell id="229" value="From Scratch" style="rounded=0;whiteSpace=wrap;html=1;fontSize=7;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="22.857142857142858" y="80.0003448275862" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="230" value="From Playlist" style="rounded=0;whiteSpace=wrap;html=1;fontSize=7;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="22.857142857142858" y="114.28620689655172" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="231" value="Seed type info appears here.&lt;br style=&quot;font-size: 10px;&quot;&gt;i.e. &quot;Seed from genre&quot;&lt;br style=&quot;font-size: 10px;&quot;&gt;or the playlist shelf if from playlist" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;fontSize=10;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="114.28571428571428" y="57.14310344827586" width="194.2857142857143" height="80.0003448275862" as="geometry"/>
+                </mxCell>
+                <mxCell id="232" value="Recommendation attributes component" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=middle;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="11.428571428571429" y="160.0006896551724" width="308.57142857142856" height="102.85758620689654" as="geometry"/>
+                </mxCell>
+                <mxCell id="233" value="Curate (button to populate rec)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=middle;glass=1;shadow=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontFamily=Lucida Console;arcSize=50;opacity=50;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="11.428571428571429" y="276.5726206896552" width="308.57142857142856" height="43.42875862068965" as="geometry"/>
+                </mxCell>
+                <mxCell id="234" value="Generated rec from curated" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontSize=11;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="331.4285714285714" y="45.71448275862069" width="102.85714285714286" height="274.2868965517241" as="geometry"/>
+                </mxCell>
+                <mxCell id="235" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="342.8571428571429" y="91.42896551724138" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="236" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="342.8571428571429" y="125.7148275862069" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="237" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="342.8571428571429" y="160.0006896551724" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="238" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="422.85714285714283" y="91.42896551724138" width="11.428571428571429" height="228.57241379310344" as="geometry"/>
+                </mxCell>
+                <mxCell id="239" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="422.85714285714283" y="91.42896551724138" width="11.428571428571429" height="34.285862068965514" as="geometry"/>
+                </mxCell>
+                <mxCell id="240" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="342.8571428571429" y="194.28655172413792" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="241" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="342.8571428571429" y="228.57241379310344" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="242" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="342.8571428571429" y="262.858275862069" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="243" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="348.57142857142856" y="97.14327586206896" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="244" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="348.57142857142856" y="131.4291379310345" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="245" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="348.57142857142856" y="165.715" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="246" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="394.2857142857143" y="97.14327586206896" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="247" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="394.2857142857143" y="131.4291379310345" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="248" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="394.2857142857143" y="165.715" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="249" value="New playlist" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontSize=11;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="440" y="45.71448275862069" width="102.85714285714286" height="274.2868965517241" as="geometry"/>
+                </mxCell>
+                <mxCell id="250" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="451.42857142857144" y="91.42896551724138" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="251" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="451.42857142857144" y="125.7148275862069" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="252" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="451.42857142857144" y="160.0006896551724" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="253" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="531.4285714285714" y="91.42896551724138" width="11.428571428571429" height="194.28655172413792" as="geometry"/>
+                </mxCell>
+                <mxCell id="254" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="531.4285714285714" y="91.42896551724138" width="11.428571428571429" height="34.285862068965514" as="geometry"/>
+                </mxCell>
+                <mxCell id="255" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="451.42857142857144" y="194.28655172413792" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="256" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="451.42857142857144" y="228.57241379310344" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="257" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="457.1428571428571" y="97.14327586206896" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="258" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="457.1428571428571" y="131.4291379310345" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="259" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="457.1428571428571" y="165.715" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="260" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="502.85714285714283" y="97.14327586206896" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="261" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="502.85714285714283" y="131.4291379310345" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="262" value="+" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;arcSize=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="502.85714285714283" y="165.715" width="11.428571428571429" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="263" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=12;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="451.42857142857144" y="262.858275862069" width="68.57142857142857" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="264" value="" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontSize=11;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="440" y="280.0012068965517" width="102.85714285714286" height="40.0001724137931" as="geometry"/>
+                </mxCell>
+                <mxCell id="265" value="Name {text}" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=9;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="445.7142857142857" y="285.7155172413793" width="91.42857142857143" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="266" value="Create" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=9;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="445.7142857142857" y="302.85844827586203" width="91.42857142857143" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="267" value="Settings" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="462.8571428571429" y="5.714310344827586" width="91.42857142857143" height="22.857241379310345" as="geometry"/>
+                </mxCell>
+                <mxCell id="268" value="Add all" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fontSize=9;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontFamily=Lucida Console;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="270">
+                    <mxGeometry x="337.14285714285717" y="302.85844827586203" width="80" height="11.428620689655173" as="geometry"/>
+                </mxCell>
+                <mxCell id="269" value="" style="endArrow=none;html=1;strokeWidth=1;fontFamily=Lucida Console;fontSize=10;entryX=-0.018;entryY=0.901;entryDx=0;entryDy=0;entryPerimeter=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" edge="1" parent="270" target="238">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="331.4285714285714" y="296.6869931034482" as="sourcePoint"/>
+                        <mxPoint x="417.14285714285717" y="296.6869931034482" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="271" value="Visual goals:" style="rounded=1;whiteSpace=wrap;html=1;fontSize=42;fillColor=none;strokeColor=none;align=left;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1670" y="1950" width="730" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="272" value="To have a layout &lt;br&gt;feel matching the design" style="rounded=1;whiteSpace=wrap;html=1;fontSize=42;fillColor=none;strokeColor=none;align=left;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" parent="1">
+                    <mxGeometry x="1730" y="2040" width="520" height="100" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

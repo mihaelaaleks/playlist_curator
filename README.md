@@ -18,10 +18,13 @@ Other things to include:
 
 
 ## Dependencies
-Please see the project `toml` file for a list of Python package dependencies. Additionally this project makes use of the Spotify API via the `Spotipy` library. For more information on how that can be setup please visit the official [Spotipy documentation](https://spotipy.readthedocs.io/en/2.22.1/).
+Please see the project `toml` file for a list of Python package dependencies. This project interacts with the Spotify API via the `Spotipy` library. For more information on how that can be setup, refer to the official [Spotipy documentation](https://spotipy.readthedocs.io/en/2.24.0/).
+
+> Note: The curator requires Spotify API credentials as environment variables. For further information on setting this up refer to the Spotipy library documentation. 
 
 ## Installation
-`source env/bin/activate`
+### Python
+Ensure you have a virtual python environment created and active in the root of the project. For more information on how that can be setup, refer to this [documentation page](https://docs.python.org/3/library/venv.html).
 
 Install the required packages to run the project from the provided `requirements.txt` file: 
 Install the required packages to run the project from the provided `pyproject.toml` file: 
@@ -31,15 +34,25 @@ Install the required packages to run the project from the provided `pyproject.to
 
 For troubleshooting visit the official Python docs on how to set up a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
 
-## How to run
+### Vue.js
+Ensure you have `Node.js` and `npm` installed. 
+
+1. Navigate to the frontend service directory `root/frontend_service`. 
+2. Install dependencies via `npm install`. 
+
+
+## Getting Started
 
 ### Backend
-
-Assuming fastapi is installed, then simply running the `app/main.py` will work. That script will start the uvicorn server and connect the routes the fastapi app.
+Assuming the required dependencies are met, start the FastAPI through `backend_service/main.py`. That script will start the uvicorn server and connect the routes the fastapi app.
 
 ### Frontend
+- To start local development server: `npm run dev`
+- Create production build: `npm run build`
+- Preview production build: `npm run preview`
 
-<!-- TODO: add section here for how to run vue and what installs are needed -->
+> Note: If you encounter `'vite' is not recognized` error, ensure you've installed dependencies by running `npm install` first. 
+> Note: The frontend service won't display any data unless the backend service is running. 
 
 ## Configuration
 If the software is configurable, describe it in detail, either here or in other documentation to which you link.

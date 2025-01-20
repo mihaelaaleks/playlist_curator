@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('spotify_id')->unique();
             $table->string('display_name')->nullable();
             $table->string('profile_image')->nullable();
-            // $table->string('access_token')->nullable();
-            // $table->string('refresh_token')->nullable();
-            // $table->timestamp('token_expires_at')->nullable();
+            $table->string('access_token')->nullable();
+            $table->string('refresh_token')->nullable();
+            $table->timestamp('token_expires_at')->nullable();
             $table->timestamps();
         });
     }

@@ -14,7 +14,8 @@ dependencies = [
   "spotipy >= 2.23.0",
   "fastapi >= 0.111.0",
   "pandas >= 2.1.0",
-  "httpx >= 0.28.1"
+  "httpx >= 0.28.1",
+  "uvicorn >= 0.34.2"
 ]
 
 [project.optional-dependencies]

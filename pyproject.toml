@@ -1,25 +1,24 @@
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools]
-packages = ["curator_service"]
-
 [project]
-name = "curator_service"
-version = "0.0.2"
-requires-python = ">=3.11, <3.13" # temporary version cap
+name = "spotify_playist_curator"
+version = "0.0.1"
+requires-python = ">=3.11, <3.13" # leaving this with the version cap for now
+
 dependencies = [
   "python-dotenv >= 1.0.0",
   "spotipy >= 2.23.0",
   "fastapi >= 0.111.0",
-  "pandas >= 2.1.0",
-  "httpx >= 0.28.1",
-  "uvicorn >= 0.34.2"
+  "pandas >= 2.1.0"
 ]
-
 [project.optional-dependencies]
 dev = [
     "ipykernel >= 6.25.2",
     "pytest >= 7.4.2"
 ]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["backend_service"]
+

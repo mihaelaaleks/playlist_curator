@@ -13,7 +13,8 @@ dependencies = [
   "python-dotenv >= 1.0.0",
   "spotipy >= 2.23.0",
   "fastapi >= 0.111.0",
-  "pandas >= 2.1.0"
+  "pandas >= 2.1.0",
+  "httpx >= 0.28.1"
 ]
 
 [project.optional-dependencies]

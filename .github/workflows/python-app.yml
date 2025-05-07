@@ -38,7 +38,7 @@ jobs:
       
     - name: Test with pytest
       run: |
-        pytest --trace backend_service 
+        pytest --trace curator_service 
       env: 
         SPOTIPY_CLIENT_ID: ${{ secrets.SPOTIPY_CLIENT_ID }}
         SPOTIPY_CLIENT_SECRET: ${{ secrets.SPOTIPY_CLIENT_SECRET }}

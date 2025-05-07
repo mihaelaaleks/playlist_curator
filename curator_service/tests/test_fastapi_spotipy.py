@@ -1,8 +1,8 @@
 import pytest
 from httpx import AsyncClient, Response
 
-from backend_service.app.models import spotify as spotify_models
-from backend_service.main import app
+from curator_service.app.models import spotify as spotify_models
+from curator_service.main import app
 
 
 @pytest.mark.asyncio

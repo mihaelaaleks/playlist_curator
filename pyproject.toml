@@ -3,10 +3,10 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["backend_service"]
+packages = ["curator_service"]
 
 [project]
-name = "curator"
+name = "curator_service"
 version = "0.0.2"
 requires-python = ">=3.11, <3.13" # temporary version cap
 dependencies = [

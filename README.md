@@ -32,26 +32,25 @@ Install the required packages to run the project from the provided `pyproject.to
 For troubleshooting visit the official Python docs on how to set up a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
 
 ## How to run
-
 ### Backend
-
 Assuming fastapi is installed, then simply running the `app/main.py` will work. That script will start the uvicorn server and connect the routes the fastapi app.
 
 ### Frontend
-
-<!-- TODO: add section here for how to run vue and what installs are needed -->
+Ensure npm & node.js are installed. Navigate to the `ui/` directory: 
+    - `npm install` - to install project dependencies
+    - `npm run dev`
 
 ## Configuration
-If the software is configurable, describe it in detail, either here or in other documentation to which you link.
+Following the structure of the `compose.yaml`, the frontend is dependent on the backend. Ensure spotify client id, secret and redirect URI are available to the project as environment variables. You can acquire those from the Spotify Dashboard for developers. 
 
 ## Usage
-Show users how to use the software. Be specific. Use appropriate formatting when showing code snippets.
+Ensure you have docker installed. Navigate to the root of the project and `docker compose up`. See Docker documentation for further troubleshooting, should you have issues. 
 
 ## How to test the software
-If the software includes automated tests, detail how to run those tests.
+Tests for basic functionality of the `curator service` can be found in the `root/curator_service/tests` directory.
 
 ## Known issues
-Document any known significant shortcomings with the software.
+Long way to go still. 
 
 ## Getting help
 Instruct users how to get help with this software; this might include links to an issue tracker, wiki, mailing list, etc.
@@ -80,14 +79,16 @@ When your changes are complete then create a Pull Request ensuring that your bra
 ## Goal structure
 
 ```
-\backend_service
-    .env
-    pyproject.toml # maybe this is in backend service?
+\curator_service
     \tests
-    \data
-\frontend_service
+    \app
+    Dockerfile
+\ui
     \tests
-    \data
+    \src
+    Dockerfile
 LICENSE
 README.md
+pyproject.toml
+compose.yaml
 ```

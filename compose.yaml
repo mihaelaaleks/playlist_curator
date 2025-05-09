@@ -1,0 +1,38 @@
+
+# maybe also specify version
+# version: 3.8
+
+services:
+  # fastapi curator service
+  curator-service:
+    build:
+      context: . #this is the only build context it looks at
+      # so it can't find the toml file
+      dockerfile: ./curator_service/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
+      - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET}
+      - SPOTIFY_REDIRECT_URI=${SPOTIFY_REDIRECT_URI}
+    volumes:
+      - ./curator_service:/app # for dev mount code for hot reloading
+      - ./pyproject.toml:/app/pyproject.toml
+    restart: unless-stopped # idk about this
+    # networks:
+    #   - app-network # double check this later
+
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    ports:
+        - "80:80"
+    depends_on:
+        - curator-service
+    environment:
+        - CURATOR_API_URL=http://curator-service:8000
+    volumes:
+        - ./ui:/app
+    restart: unless-stopped
+      # network: app-network

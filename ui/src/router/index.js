@@ -1,16 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Ping from '@/components/Ping.vue';
+import { AuthService } from '../services/auth';
+import Login from '../components/Login.vue';
+import Curator from '../views/Curator.vue';
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import('../views/Home.vue')
+    redirect: '/curator'
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/callback',
+    name: 'Callback',
+    component: Login  // Reuse Login component for handling callback
   },
   {
     path: '/curator',
-    name: 'curator',
-    component: () => import('../views/Curator.vue')
+    name: 'Curator',
+    component: Curator,
+    meta: { requiresAuth: true }
   },
   {
     path: '/stats',
@@ -23,13 +35,28 @@ const routes = [
   {
     path: '/ping',
     name: 'ping', 
-    component: Ping
+    component: () => import('../components/Ping.vue')
   }
 ]
-
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: routes
+})
+
+// Navigation guard to check authentication
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!AuthService.isAuthenticated()) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 })
 
 export default router

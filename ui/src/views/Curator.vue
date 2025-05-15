@@ -3,7 +3,8 @@ import DropDown from '../components/DropDown.vue';
 import Slider from '../components/Slider.vue';
 import TracklistCurator from '../components/TracklistCurator.vue'
 import { ref } from 'vue';
-import axios from 'axios';
+
+import axios from '../services/axios-interceptor';
 
 export default {
     name: 'Curator',

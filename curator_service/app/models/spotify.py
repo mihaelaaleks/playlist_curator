@@ -3,14 +3,12 @@ from typing import Optional
 
 from pydantic import BaseModel
 
-
 class Genre(BaseModel):
     name: str
 
 
 class Track(BaseModel):
-    # TODO: check on front end of embed. It seems like only the id is needed
-    #   hence, no need to pass things like the artists.
+    # TODO: check on front end of embed if current model is correct
     id: str
     name: str
 
@@ -22,17 +20,11 @@ class Playlist(BaseModel):
 
 
 class PlaylistCreator(BaseModel):
-    name: str  # name of playlist
+    name: str
     tracks: list[Track]
 
 
-# TODO: So for all the different attributes, they have slightly
-#   annoyingly different rules.
-#   yeah this will for sure be the most annoying thing to do
-#   but doing it well from the python should then make it
-#   easy for the front end to communicate
-# Leo don't be silly, this is pydantic so you can just build this
-# as some "base attribute model" and then pass that.
+# Check if basemodel strategy is correct/still good
 class Attribute(BaseModel):
     name: str
     target: float
@@ -41,6 +33,11 @@ class Attribute(BaseModel):
         # TODO: These checks have to happen per type of attribute unfortunately.
         # Target is the value between 0 and 1 to
         # use for the named attribute.
+
+        # wait they have to happen per type of attribute but then were abstracting from a base model 
+        # KNOWING theyre all different
+        # we have to retest how to set the tolerance for these
+        # maybe do it individually then we can figure out some way to abstract it neatly
         if 1 <= self.target <= 100:
             self.target = self.target / 100
         assert 0 <= self.target <= 1

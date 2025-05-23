@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from fastapi.security import OAuth2PasswordBearer
 from typing import Optional
 import requests
+import requests.compat
 
 #environment variable setup
 load_dotenv()

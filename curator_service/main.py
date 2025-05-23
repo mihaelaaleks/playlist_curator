@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from starlette import status
 
-from app.api import spotify, spotify_authenticate
+from .app.api import spotify, spotify_authenticate
 
 app = FastAPI()
 origins = [

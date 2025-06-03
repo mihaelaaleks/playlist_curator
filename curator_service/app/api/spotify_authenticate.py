@@ -13,7 +13,7 @@ load_dotenv()
 
 # spotify-specific vars
 CLIENT_ID = os.environ.get("SPOTIFY_CLIENT_ID")
-REDIRECT_URI = os.environ.get("SPOTIFY_REDIRECT_API")
+REDIRECT_URI = os.environ.get("SPOTIFY_REDIRECT_URI")
 
 SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize"
 SPOTIFY_TOKEN_URL = "https://accounts.spotify.com/api/token"

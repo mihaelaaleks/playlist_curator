@@ -37,6 +37,23 @@ import { AuthService } from './services/auth'
   </div>
 </template>
 
+// this is how I think the login template should look like but review it again
+<template>
+  <div name="parent">
+    <div name="header-grid">
+      <header>
+          <nav v-if="isAuthenticated">
+            <ul>
+              <li><router-link to="/curator">Curator</router-link></li>
+              <li><a href="#" @click.prevent="logout">Logout</a></li>
+            </ul>
+          </nav>
+      </header>
+    </div>
+    <div name="content-grid" class="content-grid"><router-view /></div>
+  </div>
+</template>
+
 
 <style scoped>
 

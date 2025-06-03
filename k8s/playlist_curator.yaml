@@ -1,0 +1,82 @@
+# Curator API Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curator-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: curator-api
+  template:
+    metadata:
+      labels:
+        app: curator-api
+    spec:
+      containers:
+      - name: curator-api
+        image: curator-service:latest  # Keep your existing image name
+        imagePullPolicy: Never  # Use local image, don't try to pull
+        ports:
+        - containerPort: 8000
+        env:
+        - name: SPOTIFY_CLIENT_ID
+          value: "your-spotify-client-id"  # Replace with actual value
+        - name: SPOTIFY_CLIENT_SECRET
+          value: "your-spotify-client-secret"  # Replace with actual value
+        - name: SPOTIFY_REDIRECT_URI
+          value: "your-spotify-redirect-uri"  # Replace with actual value
+
+---
+# Curator API Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: curator-api
+spec:
+  selector:
+    app: curator-api
+  ports:
+  - port: 8000
+    targetPort: 8000
+  type: ClusterIP
+
+---
+# Curator Web Deployment  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curator-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: curator-web
+  template:
+    metadata:
+      labels:
+        app: curator-web
+    spec:
+      containers:
+      - name: curator-web
+        image: curator-ui:latest  # Keep your existing image name
+        imagePullPolicy: Never  # Use local image, don't try to pull
+        ports:
+        - containerPort: 80
+        env:
+        - name: CURATOR_API_URL
+          value: "http://curator-api:8000"  # Updated to match new service name
+
+---
+# Curator Web Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: curator-web
+spec:
+  selector:
+    app: curator-web
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort  # Allows external access in minikube

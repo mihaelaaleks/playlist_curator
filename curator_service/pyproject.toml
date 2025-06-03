@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "curator_service"
+version = "0.0.2"
+requires-python = ">=3.11" 
+dependencies = [
+  "python-dotenv >= 1.0.0",
+  "spotipy >= 2.23.0",
+  "fastapi[standard] >= 0.115.12",
+  "pandas >= 2.1.0",
+  "httpx >= 0.28.1",
+  "uvicorn[standard] >= 0.34.2",
+  "gunicorn == 23.0.0",
+  "starlette == 0.46.0"
+
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipykernel >= 6.25.2",
+    "pytest >= 7.4.2",
+    "pytest-asyncio >= 0.26.0"
+]

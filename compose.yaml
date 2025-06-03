@@ -1,14 +1,11 @@
-
-# maybe also specify version
-# version: 3.8
-
 services:
   # fastapi curator service
   curator-service:
+    container_name: curator_service
     build:
-      context: . #this is the only build context it looks at
-      # so it can't find the toml file
-      dockerfile: ./curator_service/Dockerfile
+      context: ./curator_service/ #build context differs because of .toml location
+      dockerfile: Dockerfile
+    image: curator-service:latest
     ports:
       - "8000:8000"
     environment:
@@ -16,16 +13,17 @@ services:
       - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET}
       - SPOTIFY_REDIRECT_URI=${SPOTIFY_REDIRECT_URI}
     volumes:
-      - ./curator_service:/app # for dev mount code for hot reloading
-      - ./pyproject.toml:/app/pyproject.toml
-    restart: unless-stopped # idk about this
+      - ./curator_service:/app/curator_service # for dev mount code for hot reloading
+    restart: unless-stopped 
     # networks:
     #   - app-network # double check this later
 
   ui:
+    container_name: curator_ui
     build:
       context: ./ui
       dockerfile: Dockerfile
+    image: curator-ui:latest
     ports:
         - "80:80"
     depends_on:

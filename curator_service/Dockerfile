@@ -10,13 +10,13 @@ RUN apt-get update && \
 apt-get install -y --no-install-recommends gcc && \
 rm -rf /var/lib/apt/lists/*
 
-COPY curator_service/ ./curator_service/
 COPY pyproject.toml .
+RUN pip install -e . && pip list
+RUN pip install fastapi[standard]
 
-
-RUN pip install -e .
-
+COPY . ./curator_service/
 
 EXPOSE 8000
+WORKDIR /app/curator_service
 
-CMD [ "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000" ]
+CMD ["fastapi", "run", "main.py", "--host", "0.0.0.0", "--port", "8000", "--reload"]

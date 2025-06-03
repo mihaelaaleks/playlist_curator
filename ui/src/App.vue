@@ -4,7 +4,7 @@ import { useRouter, RouterLink, RouterView } from 'vue-router'
 import { AuthService } from './services/auth'
 </script>
 
-<template>
+<!-- <template>
   <div name="parent">
     <div name="header-grid">
       <header>
@@ -18,7 +18,7 @@ import { AuthService } from './services/auth'
     </div>
     <div name="content-grid" class="content-grid"><RouterView /></div>
   </div>
-</template>
+</template> -->
 
 // this is how I think the login template should look like but review it again
 <template>

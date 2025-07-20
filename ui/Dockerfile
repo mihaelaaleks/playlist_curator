@@ -8,6 +8,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+
+# Set default for Kubernetes, can be overridden
+ARG VITE_API_BASE_URL=http://curator-api:8000
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
+
 RUN npm run build
 
 # production stage

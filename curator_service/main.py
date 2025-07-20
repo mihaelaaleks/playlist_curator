@@ -9,10 +9,11 @@ from curator_service.app.api import spotify, spotify_authenticate
 
 app = FastAPI()
 origins = [
+    # local dev
     "http://localhost",
     "http://localhost:5173",
     "https://localhost:5173",
-    "http://localhost:5173/curator",
+    "http://localhost:5173/curator"
 ]
 
 app.add_middleware(

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: curator-config
+data:
+  UI_URL: "http://localhost:5173"
+  CURATOR_API_URL: "http://curator-api:8000"

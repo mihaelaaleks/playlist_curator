@@ -64,7 +64,7 @@ export default {
                     }))
                 };
 
-                const response = await axios.post('http://localhost:8000/spotify/curate', requestData);
+                const response = await axios.get(`${config.apiBaseUrl}/spotify/get_playlists/me`, requestData);
 
                 // Populate the recommendationTracksResponse array based on the API response
                 this.recommendationTracksResponse = response.data;
@@ -112,9 +112,8 @@ export default {
         </div>
         <div class="R-child-grid">
             <div class="title" id="curator-title">Recommendations</div>
-            <TracklistCurator class="curator-component" 
-            :items="this.recommendationTracksResponse"
-            @update:actualItems="handleActualItemsUpdate"/>
+            <TracklistCurator class="curator-component" :items="this.recommendationTracksResponse"
+                @update:actualItems="handleActualItemsUpdate" />
             <div class="container-recommend">
                 <button @click="submitCreatePlaylistFormData">Create Playlist</button>
             </div>
@@ -129,7 +128,7 @@ button {
 }
 
 #curator-title {
-     grid-area: 1 / 1 / 2 / 2;
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .curator-component {
@@ -163,11 +162,11 @@ button {
     border: 2px;
     align-content: center;
     padding: 0% 1% !important;
-    width:max-content;
+    width: max-content;
     align-self: start;
     position: inherit;
 
-    display:grid;
+    display: grid;
     grid-template-rows: auto-fit;
     grid-template-columns: auto-fit, 1fr;
     grid-column-gap: 5px;

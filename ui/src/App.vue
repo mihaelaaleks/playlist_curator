@@ -2,34 +2,20 @@
 import { ref, onMounted, watch } from 'vue'
 import { useRouter, RouterLink, RouterView } from 'vue-router'
 import { AuthService } from './services/auth'
-</script>
 
-<!-- <template>
-  <div name="parent">
-    <div name="header-grid">
-      <header>
-          <nav>
-            <ul>
-              <li><RouterLink to="/curator">Curator</RouterLink></li>
-              <li><RouterLink to="/stats">Stats</RouterLink></li>
-            </ul>
-          </nav>
-      </header>
-    </div>
-    <div name="content-grid" class="content-grid"><RouterView /></div>
-  </div>
-</template> -->
+var isAuthenticated = AuthService.isAuthenticated()
+</script>
 
 <template>
   <div name="parent">
     <div name="header-grid">
       <header>
-          <nav v-if="isAuthenticated">
-            <ul>
-              <li><router-link to="/curator">Curator</router-link></li>
-              <li><a href="#" @click.prevent="logout">Logout</a></li>
-            </ul>
-          </nav>
+        <nav v-if="isAuthenticated">
+          <ul>
+            <li><router-link to="/curator">Curator</router-link></li>
+            <li><a href="#" @click.prevent="logout">Logout</a></li>
+          </ul>
+        </nav>
       </header>
     </div>
     <div name="content-grid" class="content-grid"><router-view /></div>
@@ -47,7 +33,7 @@ import { AuthService } from './services/auth'
 }
 
 nav {
-  width:100%;
+  width: 100%;
   text-align: center;
   border-radius: 6px;
 }

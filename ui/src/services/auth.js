@@ -2,7 +2,7 @@
 // VITE_REDIRECT_URI to the environment
 import axios from 'axios';
 
-const AUTH_API_URL = 'http://localhost:8000/auth_spotify';
+const AUTH_API_URL = '/api/auth_spotify';
 const TOKEN_STORAGE_KEY = 'spotify_token';
 
 export class AuthService {
@@ -25,17 +25,23 @@ export class AuthService {
 
     static async login() {
         try {
+            console.log('Starting login process...');
             // Generate PKCE code verifier and challenge
             const codeVerifier = await this.generateCodeVerifier();
             const codeChallenge = await this.generateCodeChallenge(codeVerifier);
+
+            console.log('Generated code verifier and challenge', codeChallenge);
             
             // Store code verifier for later use
             localStorage.setItem('code_verifier', codeVerifier);
+            console.log('Stored code verifier:', codeVerifier);
             
             // Get authorization URL from backend
-            const response = await axios.get(`${AUTH_API_URL}/login`, {
+            const response = await axios.get(`api/auth_spotify/login`, {
                 params: { code_challenge: codeChallenge }
             });
+
+            console.log('Backend response:', response.data);
             
             // Redirect to Spotify authorization page
             window.location.href = response.data.auth_url;
@@ -46,6 +52,8 @@ export class AuthService {
     }
 
     static async handleCallback(code) {
+        
+        console.log("code:", code);
         try {
             const codeVerifier = localStorage.getItem('code_verifier');
             if (!codeVerifier) {
@@ -63,7 +71,7 @@ export class AuthService {
 
             // Store tokens
             this.setTokens(response.data);
-
+            console.log("response data:", response.data);
             return response.data;
         } catch (error) {
             console.error('Token exchange failed:', error);
@@ -91,6 +99,7 @@ export class AuthService {
     }
 
     static setTokens(tokens) {
+        console.log("access token", tokens);
         const { access_token, refresh_token, expires_in } = tokens;
         const now = new Date();
         const expires = new Date(now.getTime() + (expires_in * 1000));
@@ -101,9 +110,11 @@ export class AuthService {
             expires_in,
             expires
         }));
+        console.log("token set:", localStorage.getItem(TOKEN_STORAGE_KEY));
     }
-
+    
     static getTokens() {
+        console.log("token get:", localStorage.getItem(TOKEN_STORAGE_KEY));
         const tokens = localStorage.getItem(TOKEN_STORAGE_KEY);
         return tokens ? JSON.parse(tokens) : null;
     }

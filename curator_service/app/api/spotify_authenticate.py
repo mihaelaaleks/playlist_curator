@@ -7,14 +7,14 @@ from fastapi.security import OAuth2PasswordBearer
 from typing import Optional
 import requests
 import requests.compat
-
+from ..models.spotify import (TokenRequest)
 
 #environment variable setup
 load_dotenv()
 
 # spotify-specific vars
 CLIENT_ID = os.environ.get("SPOTIFY_CLIENT_ID")
-REDIRECT_URI = os.environ.get("SPOTIFY_REDIRECT_URI_1")
+REDIRECT_URI = os.environ.get("SPOTIFY_REDIRECT_URI")
 
 SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize"
 SPOTIFY_TOKEN_URL = "https://accounts.spotify.com/api/token"
@@ -64,7 +64,7 @@ async def login(code_challenge: str):
         raise HTTPException(status_code=400, detail=str(e))
     
 @router.post("/token")
-async def get_token(code: str, code_verifier: str = Query(...)):
+async def get_token(request: TokenRequest):
     """
     Exchange authorization code for access token using PKCE
     
@@ -76,10 +76,10 @@ async def get_token(code: str, code_verifier: str = Query(...)):
         token_data = {
             "client_id": CLIENT_ID,
             "grant_type": "authorization_code",
-            "code": code,
+            "code": request.code,
             "scope": SCOPE,
             "redirect_uri": REDIRECT_URI,
-            "code_verifier": code_verifier,
+            "code_verifier": request.code_verifier,
         }
 
         headers = {

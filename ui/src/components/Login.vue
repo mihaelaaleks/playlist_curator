@@ -20,7 +20,8 @@ export default {
 
     onMounted(() => {
       // Check if we're handling a callback from Spotify
-      const urlParams = new URLSearchParams(window.location.search);
+      const urlParams = new URLSearchParams(window.location.search.split('?')[2]);
+      console.log('urlParams', urlParams)
       const code = urlParams.get('code');
       const error = urlParams.get('error');
 
@@ -95,4 +96,4 @@ export default {
   opacity: 0.7;
   cursor: not-allowed;
 }
-</style> 
+</style>

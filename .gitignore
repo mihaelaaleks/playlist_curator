@@ -203,3 +203,6 @@ coverage
 
 *.tsbuildinfo
 
+# Deployment/Configs
+secrets.yaml
+secret.yaml

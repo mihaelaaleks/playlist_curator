@@ -3,6 +3,10 @@ from typing import Optional
 
 from pydantic import BaseModel
 
+class TokenRequest(BaseModel):
+    code: str
+    code_verifier: str
+
 class Genre(BaseModel):
     name: str
 

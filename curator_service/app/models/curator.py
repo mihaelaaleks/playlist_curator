@@ -1,6 +1,5 @@
-from spotipy import Spotify
-
 # Taken from spotipy.client.Spotify.recommendations.
+from spotipy import Spotify
 ALL_RECOMMENDATION_ATTRIBUTES = [
     "acousticness",
     "danceability",

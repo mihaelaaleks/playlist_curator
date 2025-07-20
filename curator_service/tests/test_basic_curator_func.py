@@ -100,21 +100,21 @@ class TestSpotifyAuthentication:
     # im not sure what about the assertion here breaks I think its the patch objects
     def test_token_exchange_success(self):
         """Test successful token exchange"""
-    mock_response = {
-        "access_token": "mock_token",
-        "token_type": "Bearer",
-        "expires_in": 3600, 
-        "refresh_token": "mock_refresh_token"
-    }
+        mock_response = {
+            "access_token": "mock_token",
+            "token_type": "Bearer",
+            "expires_in": 3600, 
+            "refresh_token": "mock_refresh_token"
+        }
 
-    with patch("requests.post") as mock_post: 
-        mock_post.return_value.status_code = 200
-        mock_post.return_value.json.return_value = mock_response
+        with patch("requests.post") as mock_post: 
+            mock_post.return_value.status_code = 200
+            mock_post.return_value.json.return_value = mock_response
 
-        # FIX: Send as query parameters
-        response = client.post("/auth_spotify/token?code=test_code&code_verifier=test_verifier")
-        assert response.status_code == 200
-        assert response.json() == mock_response
+            # FIX: Send as query parameters
+            response = client.post("/auth_spotify/token?code=test_code&code_verifier=test_verifier")
+            assert response.status_code == 200
+            assert response.json() == mock_response
 
     def test_token_exchange_failure(self):
         """Test failed token exchange"""

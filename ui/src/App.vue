@@ -20,7 +20,6 @@ import { AuthService } from './services/auth'
   </div>
 </template> -->
 
-// this is how I think the login template should look like but review it again
 <template>
   <div name="parent">
     <div name="header-grid">

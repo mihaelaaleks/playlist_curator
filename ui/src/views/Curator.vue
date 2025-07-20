@@ -3,6 +3,7 @@ import DropDown from '../components/DropDown.vue';
 import Slider from '../components/Slider.vue';
 import TracklistCurator from '../components/TracklistCurator.vue'
 import { ref } from 'vue';
+import { config } from '../config/index.js';
 
 import axios from '../services/axios-interceptor';
 
@@ -29,8 +30,7 @@ export default {
     async created() {
         try {
             const [sliderLabelsResponse, dropdownOptionsResponse] = await Promise.all([
-                axios.get('http://localhost:8000/spotify/get_recommendation_attributes/number_range'),
-                axios.get('http://localhost:8000/spotify/get_genres')
+                axios.get(`${config.apiBaseUrl}/spotify/get_recommendation_attributes/number_range`),
             ]);
 
             const sliderLabels = sliderLabelsResponse.data;
